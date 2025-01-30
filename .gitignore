@@ -1,0 +1,13 @@
+# Ignore JetBrains IDE files
+.idea/
+.idea/workspace.xml
+.idea/shelf/
+
+# Ignore build directory for backend
+target/
+
+# Ignore node_modules for frontend
+frontend/node_modules/
+
+# Ignore macOS system files
+.DS_Store
