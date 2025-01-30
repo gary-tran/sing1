@@ -1,0 +1,38 @@
+.songLyricsSplit,
+.songLyricsInline {
+	display: flex;
+	flex: 1;
+	color: black;
+	padding: 0% 5% 5% 5%;
+	font-size: 22px;
+	gap: 1.25%;
+}
+
+.plainLyricsSection,
+.romanizationSection {
+	width: 50%;
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.lineHighlighted {
+	background-color: black;
+	border-color: black;
+	color: white;
+}
+
+.songLyricsInlineSection {
+	width: 100%;
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}

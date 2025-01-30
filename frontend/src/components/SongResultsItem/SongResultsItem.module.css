@@ -1,0 +1,58 @@
+.songResultRow {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	width: 410px;
+	border: 1px solid black;
+	border-radius: 7px;
+}
+
+.songResultLink {
+	display: flex;
+	flex-direction: row;
+	/* flex-direction: column; */
+	width: 100%;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 7px;
+	background: white;
+}
+
+.imgURL {
+	width: auto;
+	height: auto;
+	max-height: 150px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.songInfo {
+	color: black;
+	overflow: hidden;
+	padding-top: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+/* .songTitle,
+.songArtist {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+} */
+
+.songTitle {
+	font-size: 22px;
+}
+
+.songArtist {
+	font-size: 18px;
+	margin: 0;
+	margin-bottom: auto;
+}
+
+.songYear {
+	font-size: 16px;
+}

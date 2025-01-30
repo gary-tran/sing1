@@ -1,0 +1,120 @@
+.errorMessage,
+.loadingMessage,
+.noLyricsMessage {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+
+.songPage {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.songInfo {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 5%;
+}
+
+.songImage {
+	width: 100%;
+	max-width: 350px;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+
+.songDetails {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-left: 2.5%;
+	font-size: 50px;
+	justify-content: end;
+}
+
+.songAlbumYear,
+.songArtist {
+	font-size: 35px;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	margin: 0px 5%;
+	justify-content: space-between;
+}
+
+.lyricsControls {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.viewModeControls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.viewCheckbox {
+	display: none;
+}
+
+.viewSwitch {
+	position: relative;
+	border: 1px solid black;
+	width: 60px;
+	height: 0;
+	background-color: white;
+	border-radius: 7px;
+	margin: 0px 10px;
+}
+
+.viewSlider {
+	position: absolute;
+	width: 27px;
+	height: 27px;
+	background-color: white;
+	border-radius: 5px;
+	left: 3px;
+	transform: translateY(-50%);
+	transition: all 0.25s ease;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.viewCheckbox:checked + .viewSwitch .viewSlider {
+	left: calc(100% - 27px - 3px);
+}
+
+.plainLyricsControls,
+.romanizationControls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.plainLyricsHeading,
+.romanizationHeading {
+	width: 100%;
+	white-space: nowrap;
+}
+
+.romanizationDropdown,
+.plainLyricsDropdown {
+	font-size: 16px;
+	margin-left: 5px;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	border-radius: 7px;
+	padding: 5px;
+}
