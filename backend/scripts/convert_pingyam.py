@@ -61,9 +61,9 @@ def ensure_db(file_path, url):
         f.write(new_db)
 
 def main():
-    # url = "https://raw.githubusercontent.com/kfcd/pingyam/master/pingyambiu"
-    # file_path = "./pingyam/pingyambiu"
-    # ensure_db(file_path, url)
+    url = "https://raw.githubusercontent.com/kfcd/pingyam/master/pingyambiu"
+    file_path = "pingyam/pingyambiu"
+    ensure_db(file_path, url)
 
     if len(sys.argv) < 3:
         sys.exit(1)

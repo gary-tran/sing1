@@ -3,7 +3,7 @@
 	display: flex;
 	flex: 1;
 	color: black;
-	padding: 0% 5% 5% 5%;
+	padding: 0% calc(5% - 6px) 5% calc(5% - 6px);
 	font-size: 22px;
 	gap: 1.25%;
 }
@@ -31,8 +31,25 @@
 	display: flex;
 	justify-content: start;
 	flex-direction: column;
-	line-height: 1.5;
+	line-height: 2;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+}
+
+.inlineBox {
+	font-size: 22px;
+	margin: 0 6px;
+}
+
+.inlineBoxHighlighted {
+	font-size: 22px;
+	margin: 0 6px;
+	background-color: black;
+	border-color: black;
+	color: white;
+}
+
+.inlineRom {
+	font-size: 20px;
 }
