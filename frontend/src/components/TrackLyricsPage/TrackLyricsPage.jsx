@@ -1,35 +1,24 @@
-import styles from "./SongPage.module.css";
-import { useLocation } from "react-router-dom";
+import styles from "./TrackLyricsPage.module.css";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
-import LyricsDisplay from "../LyricsDisplay/LyricsDisplay";
+import TrackLyricsDisplay from "./TrackLyricsDisplay/TrackLyricsDisplay";
 
-export default function SongLyricsPage() {
-	const location = useLocation();
-	const song = location.state?.song;
-	const [songLyrics, setSongLyrics] = useState(null);
+export default function TrackLyricsPage() {
+	const { spotifyId } = useParams();
+	const [trackLyrics, setTrackLyrics] = useState(null);
 	const [error, setError] = useState(null);
-	// const [hoveredLine, setHoveredLine] = useState(null);
 	const [selectedRomSys, setSelectedRomSys] = useState("jyutping");
 	const [chineseOption, setChineseOption] = useState("traditional");
 	const [viewMode, setViewMode] = useState("split");
 
 	useEffect(() => {
 		const fetchLyrics = async () => {
-			if (!song || !song.id) return;
-
+			if (!spotifyId) return;
 			try {
 				const response = await fetch(
-					`http://localhost:8080/api/lyrics/${
-						song.id
-					}?trackName=${encodeURIComponent(
-						song.name
-					)}&artistName=${encodeURIComponent(
-						song.artists[0].name
-					)}&albumName=${encodeURIComponent(
-						song.album.name
-					)}&duration=${Math.floor(song.duration_ms / 1000)}`
+					`http://localhost:8080/api/lyrics/${spotifyId}`
 				);
 
 				if (!response.ok) {
@@ -37,21 +26,23 @@ export default function SongLyricsPage() {
 				}
 
 				const data = await response.json();
-				setSongLyrics(data);
+				setTrackLyrics(data);
 			} catch (error) {
 				setError(error);
 			}
 		};
-		if (song && song.id) {
+		if (spotifyId) {
 			fetchLyrics();
 		}
-	}, [song]);
+	}, [spotifyId]);
+
+	console.log(trackLyrics);
 
 	if (error) {
 		return <h3 className={styles.errorMessage}>Error...</h3>;
-	} else if (songLyrics === null) {
+	} else if (trackLyrics === null) {
 		return (
-			<div className={styles.songPage}>
+			<div className={styles.trackPage}>
 				<Navbar />
 				<h3 className={styles.loadingMessage}>Loading...</h3>;
 				<Footer />
@@ -59,8 +50,8 @@ export default function SongLyricsPage() {
 		);
 	} else {
 		let romanizationMap = {};
-		if (Array.isArray(songLyrics?.romanizationsList)) {
-			romanizationMap = songLyrics.romanizationsList.reduce(
+		if (Array.isArray(trackLyrics?.romanizationsList)) {
+			romanizationMap = trackLyrics.romanizationsList.reduce(
 				(acc, romanization) => {
 					acc[romanization.systemName] =
 						romanization.romanizedLyrics.split("\\n");
@@ -73,8 +64,8 @@ export default function SongLyricsPage() {
 		const lines = [];
 		const plainLines =
 			chineseOption === "traditional"
-				? songLyrics.plainLyricsTraditional.split("\\n")
-				: songLyrics.plainLyricsSimplified.split("\\n");
+				? trackLyrics.plainLyricsTraditional.split("\\n")
+				: trackLyrics.plainLyricsSimplified.split("\\n");
 		for (let i = 0; i < plainLines.length; i++) {
 			const line = { id: i };
 			line["plain"] = plainLines[i];
@@ -85,26 +76,28 @@ export default function SongLyricsPage() {
 		}
 
 		return (
-			<div className={styles.songPage}>
+			<div className={styles.trackPage}>
 				<Navbar />
-				<div className={styles.songInfo}>
+				<div className={styles.trackInfo}>
 					<img
-						className={styles.songImage}
-						src={song.album.images[0]?.url || ""}
-						alt="React Image"
+						className={styles.trackImage}
+						src={trackLyrics.track.imageUrl}
+						alt={trackLyrics.track.album}
 					/>
-					<div className={styles.songDetails}>
-						<p className={styles.songAlbumYear}>
-							{song.album.name} •{" "}
-							{song.album.release_date.substring(0, 4)}
+					<div className={styles.trackDetails}>
+						<p className={styles.trackAlbumYear}>
+							{trackLyrics.track.album} •{" "}
+							{trackLyrics.track.releaseDate.substring(0, 4)}
 						</p>
-						<h1 className={styles.songName}>{song.name}</h1>
-						<p className={styles.songArtist}>
-							{song.artists[0]?.name}
+						<h1 className={styles.trackTitle}>
+							{trackLyrics.track.title}
+						</h1>
+						<p className={styles.trackArtist}>
+							{trackLyrics.track.artist}
 						</p>
 					</div>
 				</div>
-				{songLyrics === null || !songLyrics.plainLyricsTraditional ? (
+				{trackLyrics === null || !trackLyrics.plainLyricsTraditional ? (
 					<h1 className={styles.noLyricsMessage}>
 						There aren&apos;t lyrics for this song... yet!
 					</h1>
@@ -113,7 +106,7 @@ export default function SongLyricsPage() {
 						<div className={styles.controls}>
 							<div className={styles.viewModeControls}>
 								<h3 className={styles.viewModeHeading}>
-									View Mode: Split
+									Split
 								</h3>
 								<input
 									type="checkbox"
@@ -207,8 +200,8 @@ export default function SongLyricsPage() {
 								</div>
 							</div>
 						</div>
-						<br />
-						<LyricsDisplay
+						{/* <br /> */}
+						<TrackLyricsDisplay
 							lines={lines}
 							viewMode={viewMode}
 							selectedRomSys={selectedRomSys}

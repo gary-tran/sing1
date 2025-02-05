@@ -1,5 +1,7 @@
 package com.example.cpld.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -35,15 +37,20 @@ public class Lyrics {
     @JsonManagedReference
     private List<Romanizations> romanizationsList;
 
+    @OneToOne
+    @JoinColumn(name = "track_id", nullable = false, unique = true)
+    private Track track;
+
     public Lyrics() {
     }
 
-    public Lyrics(String spotifyId, String syncedLyrics, String plainLyricsSimplified, String plainLyricsTraditional, Boolean isInstrumental) {
+    public Lyrics(String spotifyId, String syncedLyrics, String plainLyricsSimplified, String plainLyricsTraditional, Boolean isInstrumental, Track track) {
         this.spotifyId = spotifyId;
         this.syncedLyrics = syncedLyrics;
         this.plainLyricsSimplified = plainLyricsSimplified;
         this.plainLyricsTraditional = plainLyricsTraditional;
         this.isInstrumental = isInstrumental;
+        this.track = track;
     }
 
     public UUID getId() {
@@ -102,16 +109,24 @@ public class Lyrics {
         this.romanizationsList = romanizationsList;
     }
 
+    public Track getTrack() {
+        return track;
+    }
+
+    public void setTrack(Track track) {
+        this.track = track;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Lyrics lyrics = (Lyrics) o;
-        return Objects.equals(id, lyrics.id) && Objects.equals(spotifyId, lyrics.spotifyId) && Objects.equals(syncedLyrics, lyrics.syncedLyrics) && Objects.equals(plainLyricsSimplified, lyrics.plainLyricsSimplified) && Objects.equals(plainLyricsTraditional, lyrics.plainLyricsTraditional) && Objects.equals(isInstrumental, lyrics.isInstrumental) && Objects.equals(romanizationsList, lyrics.romanizationsList);
+        return Objects.equals(id, lyrics.id) && Objects.equals(spotifyId, lyrics.spotifyId) && Objects.equals(syncedLyrics, lyrics.syncedLyrics) && Objects.equals(plainLyricsSimplified, lyrics.plainLyricsSimplified) && Objects.equals(plainLyricsTraditional, lyrics.plainLyricsTraditional) && Objects.equals(isInstrumental, lyrics.isInstrumental) && Objects.equals(romanizationsList, lyrics.romanizationsList) && Objects.equals(track, lyrics.track);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, spotifyId, syncedLyrics, plainLyricsSimplified, plainLyricsTraditional, isInstrumental, romanizationsList);
+        return Objects.hash(id, spotifyId, syncedLyrics, plainLyricsSimplified, plainLyricsTraditional, isInstrumental, romanizationsList, track);
     }
 
     @Override
@@ -124,6 +139,7 @@ public class Lyrics {
                 ", plainLyricsTraditional='" + plainLyricsTraditional + '\'' +
                 ", isInstrumental=" + isInstrumental +
                 ", romanizationsList=" + romanizationsList +
+                ", track=" + track +
                 '}';
     }
 }

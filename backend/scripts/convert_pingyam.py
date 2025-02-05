@@ -4,12 +4,14 @@ import os
 import requests
 import sys
 
+
 class Converter:
     def __init__(self, source_rom=0):
         self.dict = self.read_dict(source_rom)
 
     def read_dict(self, source_sys=0):
-        dict_path = os.path.join(os.path.dirname(__file__), "pingyam/pingyambiu")
+        dict_path = os.path.join(os.path.dirname(
+            __file__), "pingyam/pingyambiu")
         with open(dict_path, "r") as file:
             lines = file.readlines()
 
@@ -60,9 +62,10 @@ def ensure_db(file_path, url):
     with open(file_path, "w") as f:
         f.write(new_db)
 
+
 def main():
     url = "https://raw.githubusercontent.com/kfcd/pingyam/master/pingyambiu"
-    file_path = "pingyam/pingyambiu"
+    file_path = "/pingyam/pingyambiu"
     ensure_db(file_path, url)
 
     if len(sys.argv) < 3:
@@ -74,6 +77,7 @@ def main():
 
     converted_lyrics = convert_lyrics(jyutping_lyrics, target, source)
     print(converted_lyrics)
+
 
 if __name__ == "__main__":
     main()

@@ -27,13 +27,7 @@
 	margin: 0 auto 40px;
 }
 
-.songResultsHeading {
-	width: 100%;
-	color: black;
-	padding-left: 20px;
-}
-
-.songResultsList {
+.trackResultsList {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;

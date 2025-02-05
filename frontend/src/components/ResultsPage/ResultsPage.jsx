@@ -2,32 +2,32 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
-import SongResultsItem from "../SongResultsItem/SongResultsItem.jsx";
+import ResultsItem from "./ResultsItem/ResultsItem.jsx";
 import styles from "./ResultsPage.module.css";
 
 export default function ResultsPage() {
 	const location = useLocation();
 	const searchParams = new URLSearchParams(location.search);
 	const searchQuery = searchParams.get("q");
-	const [songs, setSongs] = useState([]);
+	const [trackResults, setTrackResults] = useState([]);
 
 	useEffect(() => {
-		setSongs([]);
+		setTrackResults([]);
 		fetch(
-			`http://localhost:8080/api/spotify/search?query=${encodeURIComponent(
+			`http://localhost:8080/api/tracks/search?query=${encodeURIComponent(
 				searchQuery
-			)}&limit=50`
+			)}`
 		)
 			.then((response) => response.json())
-			.then((data) => setSongs(data))
-			.catch((error) => console.error("Error fetching songs:", error));
+			.then((data) => setTrackResults(data))
+			.catch((error) => console.error("Error fetching tracks:", error));
 	}, [searchQuery]);
 
 	return (
 		<div className={styles.resultsPage}>
 			<Navbar />
 			<div className={styles.resultsSection}>
-				{songs.length == 0 ? (
+				{trackResults.length == 0 ? (
 					<p className={styles.resultsHeading}>
 						Searching for results...
 					</p>
@@ -41,9 +41,9 @@ export default function ResultsPage() {
 						</h2>
 					</div>
 				)}
-				<ul className={styles.songResultsList}>
-					{songs.map((song) => (
-						<SongResultsItem key={song.id} song={song} />
+				<ul className={styles.trackResultsList}>
+					{trackResults.map((trackResult) => (
+						<ResultsItem key={trackResult.id} track={trackResult} />
 					))}
 				</ul>
 			</div>

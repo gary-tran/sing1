@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 25px 5%;
+	padding: 26.5px 5%;
 	list-style: none;
 	border-bottom: solid 1px black;
 }
@@ -19,6 +19,7 @@
 .searchContainer {
 	display: flex;
 	width: 255px;
+	height: 0px;
 	justify-content: center;
 	align-items: center;
 }

@@ -10,7 +10,7 @@ import java.util.UUID;
 @Repository
 public interface LyricsRepository extends JpaRepository<Lyrics, UUID> {
 
-    // SELECT * FROM track WHERE spotify_id = ?
+    // SELECT * FROM lyrics WHERE spotify_id = ?
     Optional<Lyrics> findLyricsBySpotifyId(String spotifyId);
 
 }

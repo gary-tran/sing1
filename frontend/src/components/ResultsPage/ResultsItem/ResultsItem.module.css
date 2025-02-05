@@ -1,4 +1,4 @@
-.songResultRow {
+.resultRow {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
@@ -8,7 +8,7 @@
 	border-radius: 7px;
 }
 
-.songResultLink {
+.resultLink {
 	display: flex;
 	flex-direction: row;
 	/* flex-direction: column; */
@@ -27,7 +27,7 @@
 	border-radius: 5px;
 }
 
-.songInfo {
+.trackInfo {
 	color: black;
 	overflow: hidden;
 	padding-top: 5px;
@@ -35,24 +35,24 @@
 	flex-direction: column;
 }
 
-/* .songTitle,
-.songArtist {
+/* .trackTitle,
+.trackArtist {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin: 0;
 } */
 
-.songTitle {
+.trackTitle {
 	font-size: 22px;
 }
 
-.songArtist {
+.trackArtist {
 	font-size: 18px;
 	margin: 0;
 	margin-bottom: auto;
 }
 
-.songYear {
+.trackYear {
 	font-size: 16px;
 }
