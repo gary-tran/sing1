@@ -11,7 +11,7 @@ class Converter:
 
     def read_dict(self, source_sys=0):
         dict_path = os.path.join(os.path.dirname(
-            __file__), "pingyam/pingyambiu")
+            __file__), "pingyam", "pingyambiu")
         with open(dict_path, "r") as file:
             lines = file.readlines()
 
@@ -66,7 +66,9 @@ def ensure_db(file_path, url):
 
 def main():
     url = "https://raw.githubusercontent.com/kfcd/pingyam/master/pingyambiu"
-    file_path = "pingyam/pingyambiu"
+    save_dir = os.path.join(os.path.dirname(__file__), "pingyam")
+    os.makedirs(save_dir, exist_ok=True)
+    file_path = os.path.join(save_dir, 'pingyambiu')
     ensure_db(file_path, url)
 
     # "yaleToneNumbers",       // 0

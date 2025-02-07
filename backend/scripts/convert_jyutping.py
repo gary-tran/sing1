@@ -84,7 +84,6 @@ def main():
         sys.exit(1)
 
     chinese_lyrics = sys.argv[1]
-    # target = int(sys.argv[2])
 
     base_url = "https://raw.githubusercontent.com/kfcd/yyzd/master/dist/tsv/繁體/"
     # file_mappings = {
