@@ -86,19 +86,6 @@ def main():
     chinese_lyrics = sys.argv[1]
 
     base_url = "https://raw.githubusercontent.com/kfcd/yyzd/master/dist/tsv/繁體/"
-    # file_mappings = {
-    #     0: '粵語字典_(耶魯_數字).txt',  # "yaleToneNumbers"
-    #     1: '粵語字典_(耶魯_調符).txt',  # "yaleToneDiacritics"
-    #     2: '粵語字典_(教院).txt',  # "cantonesePinyin"
-    #     3: '粵語字典_(黃錫凌_數字).txt',  # "slWongToneNumbers"
-    #     4: '粵語字典_(黃錫凌_調符).txt',  # "slWongToneDiacritics"
-    #     5: '粵語字典_(國際音標).txt',  # "ipa"
-    #     6: '粵語字典_(粵拼).txt',  # "jyutping"
-    #     7: '粵語字典_(廣州拼音).txt',  # "cantonPinyin"
-    #     8: '粵語字典_(劉錫祥).txt',  # "sidneyLau"
-    #     9: '粵語字典_(粵語拼音字_數字).txt',  # "penkyampToneNumbers"
-    #     10: '粵語字典_(粵語拼音字_調符).txt',  # "penkyampToneDiacritics"
-    # }
     save_dir = os.path.join(os.path.dirname(__file__), "pingyam")
     os.makedirs(save_dir, exist_ok=True)
 
