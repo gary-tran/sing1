@@ -28,6 +28,7 @@ class Converter:
             syllable = w[method]
             if method == 0:
                 syllable = self.normalize_yale(syllable)
+            syllable = '0' + syllable
             return syllable
         return word
 
@@ -65,8 +66,20 @@ def ensure_db(file_path, url):
 
 def main():
     url = "https://raw.githubusercontent.com/kfcd/pingyam/master/pingyambiu"
-    file_path = "/pingyam/pingyambiu"
+    file_path = "pingyam/pingyambiu"
     ensure_db(file_path, url)
+
+    # "yaleToneNumbers",       // 0
+    # "yaleToneDiacritics",    // 1
+    # "cantonesePinyin",       // 2
+    # "slWongToneNumbers",     // 3
+    # "slWongToneDiacritics",  // 4
+    # "ipa",                   // 5
+    # "jyutping",              // 6
+    # "cantonPinyin",          // 7
+    # "sidneyLau",             // 8
+    # "penkyampToneNumbers",   // 9
+    # "penkyampToneDiacritics" // 10
 
     if len(sys.argv) < 3:
         sys.exit(1)

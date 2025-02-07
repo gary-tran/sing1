@@ -92,7 +92,10 @@ export default function TrackLyricsDisplay({
 												setHoveredLine(null)
 											}
 										>
-											{line[selectedRomSys]}
+											{line[selectedRomSys].replace(
+												/\b0+/g,
+												""
+											)}
 										</div>
 									)
 								)}
@@ -109,74 +112,142 @@ export default function TrackLyricsDisplay({
 									<br />
 								</div>
 							) : (
-								<div key={line.id} className={styles.line}>
-									{line.plain
-										.split(regexChineseChars)
-										.filter(Boolean)
-										.map((char, index) => {
-											const chars = line.plain
-												.split(regexChineseChars)
-												.filter(Boolean);
+								// <div key={line.id} className={styles.line}>
+								// 	{() => {
+								// 		const chars = line.plain
+								// 			.split(regexChineseChars)
+								// 			.filter(Boolean);
 
-											let romanizedChars = line[
-												selectedRomSys
-											]
-												.split(/(\s+|\S+)/g)
-												.filter(
-													(value) =>
-														value !== "" &&
-														value !== " "
-												);
+								// 		let romanizedChars = line[
+								// 			selectedRomSys
+								// 		]
+								// 			.split(/(\s+|\S+)/g)
+								// 			.filter(
+								// 				(value) =>
+								// 					value !== "" &&
+								// 					value !== " "
+								// 			);
 
-											chars.forEach((char, index) => {
-												if (
-													char === " " &&
-													romanizedChars[index] !==
-														"   "
-												) {
-													romanizedChars.splice(
-														index,
-														0,
-														"   "
-													);
-												}
-											});
+								// 		chars.forEach((char, index) => {
+								// 			if (
+								// 				char === " " &&
+								// 				romanizedChars[index] !== "   "
+								// 			) {
+								// 				romanizedChars.splice(
+								// 					index,
+								// 					0,
+								// 					"   "
+								// 				);
+								// 			}
+								// 		});
 
-											console.log(chars);
-											console.log(romanizedChars);
+								// 		romanizedChars = romanizedChars.filter(
+								// 			(romanizedChar) =>
+								// 				!/^0.+/.test(romanizedChar)
+								// 		);
 
-											return (
-												<ruby
-													key={index}
-													className={styles.inlineBox}
-												>
-													{char}
-													{/\d$/.test(
-														romanizedChars[index]
-													) ? (
-														<rt
-															className={
-																styles.inlineRom
-															}
-														>
-															{
-																romanizedChars[
-																	index
-																]
-															}
-														</rt>
-													) : (
-														""
-													)}
-												</ruby>
-											);
-										})}
-								</div>
+								// 		const charRomanizationPairs = chars.map(
+								// 			(char, index) => {
+								// 				return regexChineseChars.test(
+								// 					char
+								// 				)
+								// 					? [
+								// 							char,
+								// 							romanizedChars[
+								// 								index
+								// 							],
+								// 					  ]
+								// 					: [char, ""];
+								// 			}
+								// 		);
+
+								// 		console.log(charRomanizationPairs);
+
+								// 		return charRomanizationPairs.map(
+								// 			([char, romanizedChar], index) => (
+								// 				<ruby
+								// 					key={index}
+								// 					className={styles.inlineBox}
+								// 				>
+								// 					{char}
+								// 					{romanizedChar === "" ? (
+								// 						<rt
+								// 							className={
+								// 								styles.inlineRom
+								// 							}
+								// 						>
+								// 							{romanizedChar}
+								// 						</rt>
+								// 					) : (
+								// 						""
+								// 					)}
+								// 				</ruby>
+								// 			)
+								// 		);
+								// 	}}
+								// </div>
+								<InlineLine
+									key={line.id}
+									line={line}
+									selectedRomSys={selectedRomSys}
+								></InlineLine>
 							)
 						)}
 					</div>
 				</div>
 			)}
 		</>
+	);
+}
+
+export function InlineLine({ line, selectedRomSys }) {
+	const regexChineseChars =
+		/([\u4e00-\u9fff\u3400-\u4dbf\ufa0e\ufa0f\ufa11\ufa13\ufa14\ufa1f\ufa21\ufa23\ufa24\ufa27\ufa28\ufa29\u3006\u3007]|[\ud840-\ud868\ud86a-\ud879\ud880-\ud887][\udc00-\udfff]|\ud869[\udc00-\udedf\udf00-\udfff]|\ud87a[\udc00-\udfef]|\ud888[\udc00-\udfaf])([\ufe00-\ufe0f]|\udb40[\udd00-\uddef])?/u;
+	const chars = line.plain.split(regexChineseChars).filter(Boolean);
+
+	let romanizedChars = line[selectedRomSys]
+		.split(/(\s+|\S+)/g)
+		.filter((value) => value !== "" && value !== " ");
+
+	chars.forEach((char, index) => {
+		if (char === " " && romanizedChars[index] !== "   ") {
+			romanizedChars.splice(index, 0, "   ");
+		}
+	});
+
+	console.log(romanizedChars);
+
+	romanizedChars = romanizedChars.filter((romanizedChar) =>
+		/^0.+/.test(romanizedChar)
+	);
+
+	console.log(romanizedChars);
+
+	const charRomanizationPairs = chars.map((char) => {
+		if (regexChineseChars.test(char) === true) {
+			return [char, romanizedChars.shift()];
+		} else {
+			return [char, ""];
+		}
+	});
+
+	console.log(charRomanizationPairs);
+	console.log(chars);
+
+	return (
+		<div key={line.id} className={styles.line}>
+			{charRomanizationPairs.map(([char, romanizedChar], index) => (
+				<ruby key={index} className={styles.inlineBox}>
+					{char}
+					{romanizedChar !== "" ? (
+						<rt className={styles.inlineRom}>
+							{romanizedChar.replace(/\b0+/g, "")}
+						</rt>
+					) : (
+						""
+					)}
+				</ruby>
+			))}
+		</div>
 	);
 }
