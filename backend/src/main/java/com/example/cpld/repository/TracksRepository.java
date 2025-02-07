@@ -16,7 +16,8 @@ public interface TracksRepository extends JpaRepository<Track, UUID> {
     @Query(value = "SELECT *, ts_rank(search_vector, plainto_tsquery('simple', :query)) AS rank " +
             "FROM tracks " +
             "WHERE search_vector @@ plainto_tsquery('simple', :query) " +
-            "ORDER BY rank DESC",
+            "ORDER BY rank DESC " +
+            "LIMIT 20",
             nativeQuery = true)
     List<Track> searchTracks(@Param("query") String query);
 

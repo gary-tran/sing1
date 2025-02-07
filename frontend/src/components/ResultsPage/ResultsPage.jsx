@@ -28,9 +28,9 @@ export default function ResultsPage() {
 			<Navbar />
 			<div className={styles.resultsSection}>
 				{trackResults.length == 0 ? (
-					<p className={styles.resultsHeading}>
+					<h2 className={styles.resultsSearchingHeading}>
 						Searching for results...
-					</p>
+					</h2>
 				) : (
 					<div>
 						<p className={styles.resultsHeading}>

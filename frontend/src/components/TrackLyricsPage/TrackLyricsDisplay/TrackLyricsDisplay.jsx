@@ -8,9 +8,6 @@ export default function TrackLyricsDisplay({
 }) {
 	const [hoveredLine, setHoveredLine] = useState(null);
 
-	const regexChineseChars =
-		/([\u4e00-\u9fff\u3400-\u4dbf\ufa0e\ufa0f\ufa11\ufa13\ufa14\ufa1f\ufa21\ufa23\ufa24\ufa27\ufa28\ufa29\u3006\u3007]|[\ud840-\ud868\ud86a-\ud879\ud880-\ud887][\udc00-\udfff]|\ud869[\udc00-\udedf\udf00-\udfff]|\ud87a[\udc00-\udfef]|\ud888[\udc00-\udfaf])(?:[\ufe00-\ufe0f]|\udb40[\udd00-\uddef])?|(\s+)/gu;
-
 	const paragraphs = lines.reduce((acc, line) => {
 		if (line.plain === "") {
 			acc.push([line]);

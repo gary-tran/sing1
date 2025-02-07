@@ -36,15 +36,13 @@ export default function TrackLyricsPage() {
 		}
 	}, [spotifyId]);
 
-	console.log(trackLyrics);
-
 	if (error) {
-		return <h3 className={styles.errorMessage}>Error...</h3>;
+		return <h2 className={styles.errorMessage}>Error...</h2>;
 	} else if (trackLyrics === null) {
 		return (
 			<div className={styles.trackPage}>
 				<Navbar />
-				<h3 className={styles.loadingMessage}>Loading...</h3>;
+				<h2 className={styles.loadingMessage}>Loading...</h2>;
 				<Footer />
 			</div>
 		);
@@ -98,9 +96,9 @@ export default function TrackLyricsPage() {
 					</div>
 				</div>
 				{trackLyrics === null || !trackLyrics.plainLyricsTraditional ? (
-					<h1 className={styles.noLyricsMessage}>
-						There aren&apos;t lyrics for this song... yet!
-					</h1>
+					<h2 className={styles.noLyricsMessage}>
+						There aren&apos;t lyrics for this song... yet.
+					</h2>
 				) : (
 					<>
 						<div className={styles.controls}>
