@@ -39,7 +39,7 @@ def read_dict(file_name):
     for line in lines:
         parts = line.strip().split("\t")
         if len(parts) > 2:
-            romanization_dict[parts[0]] = parts[2]
+            romanization_dict[parts[0]] = parts[2].split('/')[0]
 
 
 def convert_lyrics(lyrics):
@@ -65,7 +65,8 @@ def convert_lyrics(lyrics):
                         words = list(og)
                         romWords = []
                         for word in words:
-                            romWords.append(romanization_dict.get(word, jp))
+                            romWords.append(romanization_dict.get(
+                                word, pycantonese.characters_to_jyutping(word)[0][1]))
                         processed_split_line.extend(
                             ' '.join(romWords))
                     processed_split_line.append(' ')
@@ -78,58 +79,34 @@ def convert_lyrics(lyrics):
     return "\\n".join(results)
 
 
-# def convert_line(line):
-#     return "   ".join(
-#         convert_syllable(word) for word in line.split(" ")
-#     )
-
-
-# def convert_syllable(word):
-#     print(word)
-#     w = romanization_dict.get(word)
-#     if w:
-#         syllable = '0' + w
-#         return syllable
-#     return word
-
-
-# def convert_lyrics(lyrics):
-#     lyrics = lyrics.replace("\\n", "\n")
-#     lines = lyrics.split("\n")
-#     converted_lines = [
-#         convert_line(line.strip()) for line in lines
-#     ]
-#     return "\\n".join(converted_lines)
-
-
 def main():
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2:
         sys.exit(1)
 
     chinese_lyrics = sys.argv[1]
-    target = int(sys.argv[2])
+    # target = int(sys.argv[2])
 
     base_url = "https://raw.githubusercontent.com/kfcd/yyzd/master/dist/tsv/繁體/"
-    file_mappings = {
-        0: '粵語字典_(耶魯_數字).txt',  # "yaleToneNumbers"
-        1: '粵語字典_(耶魯_調符).txt',  # "yaleToneDiacritics"
-        2: '粵語字典_(教院).txt',  # "cantonesePinyin"
-        3: '粵語字典_(黃錫凌_數字).txt',  # "slWongToneNumbers"
-        4: '粵語字典_(黃錫凌_調符).txt',  # "slWongToneDiacritics"
-        5: '粵語字典_(國際音標).txt',  # "ipa"
-        6: '粵語字典_(粵拼).txt',  # "jyutping"
-        7: '粵語字典_(廣州拼音).txt',  # "cantonPinyin"
-        8: '粵語字典_(劉錫祥).txt',  # "sidneyLau"
-        9: '粵語字典_(粵語拼音字_數字).txt',  # "penkyampToneNumbers"
-        10: '粵語字典_(粵語拼音字_調符).txt',  # "penkyampToneDiacritics"
-    }
+    # file_mappings = {
+    #     0: '粵語字典_(耶魯_數字).txt',  # "yaleToneNumbers"
+    #     1: '粵語字典_(耶魯_調符).txt',  # "yaleToneDiacritics"
+    #     2: '粵語字典_(教院).txt',  # "cantonesePinyin"
+    #     3: '粵語字典_(黃錫凌_數字).txt',  # "slWongToneNumbers"
+    #     4: '粵語字典_(黃錫凌_調符).txt',  # "slWongToneDiacritics"
+    #     5: '粵語字典_(國際音標).txt',  # "ipa"
+    #     6: '粵語字典_(粵拼).txt',  # "jyutping"
+    #     7: '粵語字典_(廣州拼音).txt',  # "cantonPinyin"
+    #     8: '粵語字典_(劉錫祥).txt',  # "sidneyLau"
+    #     9: '粵語字典_(粵語拼音字_數字).txt',  # "penkyampToneNumbers"
+    #     10: '粵語字典_(粵語拼音字_調符).txt',  # "penkyampToneDiacritics"
+    # }
     save_dir = os.path.join(os.path.dirname(__file__), "pingyam")
     os.makedirs(save_dir, exist_ok=True)
 
-    file_path = os.path.join(save_dir, file_mappings[target])
-    url = base_url + file_mappings[target]
+    file_path = os.path.join(save_dir, '粵語字典_(粵拼).txt')
+    url = base_url + '粵語字典_(粵拼).txt'
     ensure_db(file_path, url)
-    read_dict(file_mappings[target])
+    read_dict('粵語字典_(粵拼).txt')
 
     converted_lyrics = convert_lyrics(chinese_lyrics)
     print(converted_lyrics)
