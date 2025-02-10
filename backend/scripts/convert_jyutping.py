@@ -39,7 +39,11 @@ def read_dict(file_name):
     for line in lines:
         parts = line.strip().split("\t")
         if len(parts) > 2:
-            romanization_dict[parts[0]] = parts[2].split('/')[0]
+            if parts[0] not in romanization_dict:
+                romanization_dict[parts[0]] = []
+            for part in parts[2].split('/'):
+                if part not in romanization_dict[parts[0]]:
+                    romanization_dict[parts[0]].append(part)
 
 
 def convert_lyrics(lyrics):
@@ -65,8 +69,12 @@ def convert_lyrics(lyrics):
                         words = list(og)
                         romWords = []
                         for word in words:
-                            romWords.append(romanization_dict.get(
-                                word, pycantonese.characters_to_jyutping(word)[0][1]))
+                            if romanization_dict.get(word):
+                                romWords.append(
+                                    '/'.join(romanization_dict.get(word)))
+                            else:
+                                romWords.append(
+                                    pycantonese.characters_to_jyutping(word)[0][1])
                         processed_split_line.extend(
                             ' '.join(romWords))
                     processed_split_line.append(' ')

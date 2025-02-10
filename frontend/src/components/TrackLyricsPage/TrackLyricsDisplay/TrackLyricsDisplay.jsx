@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./TrackLyricsDisplay.module.css";
 
 export default function TrackLyricsDisplay({
@@ -156,14 +156,78 @@ export function InlineLine({ line, selectedRomSys }) {
 				<ruby key={index} className={styles.inlineBox}>
 					{char}
 					{romanizedChar !== "" ? (
-						<rt className={styles.inlineRom}>
-							{romanizedChar.replace(/\b0+/g, "")}
-						</rt>
+						romanizedChar.includes("/") ? (
+							// <rt className={styles.inlineRom}>
+							<CharacterRomanizationDropdown
+								romanizedChar={romanizedChar.replace(
+									/\b0+/g,
+									""
+								)}
+							/>
+						) : (
+							// </rt>
+							<rt className={styles.inlineRom}>
+								{romanizedChar.replace(/\b0+/g, "")}
+							</rt>
+						)
 					) : (
 						""
 					)}
 				</ruby>
 			))}
 		</div>
+	);
+}
+
+export function CharacterRomanizationDropdown({ romanizedChar }) {
+	const [selectedCharJyutping, setSelectedCharJyutping] = useState(
+		romanizedChar.split("/")[0]
+	);
+
+	const romCharSelectRef = useRef(null);
+	const adjustSelectWidth = (e) => {
+		const displayedText = e.options[e.selectedIndex].innerText;
+		const dummy = document.createElement("p");
+		dummy.innerText = displayedText;
+		dummy.style.position = "absolute";
+		dummy.style.visibility = "hidden";
+		dummy.style.whiteSpace = "nowrap";
+		dummy.style.fontSize = "22px";
+		document.body.appendChild(dummy);
+		const measuredWidth = dummy.clientWidth;
+		document.body.removeChild(dummy);
+		e.style.width = `${measuredWidth + 20}px`;
+	};
+
+	useEffect(() => {
+		if (romCharSelectRef.current) {
+			adjustSelectWidth(romCharSelectRef.current);
+		}
+	}, [selectedCharJyutping]);
+
+	useEffect(() => {
+		if (romCharSelectRef.current) {
+			adjustSelectWidth(romCharSelectRef.current);
+		}
+	}, [romanizedChar]);
+
+	return (
+		<rt className={styles.inlineRom}>
+			<select
+				ref={romCharSelectRef}
+				onChange={(e) => {
+					setSelectedCharJyutping(e.target.value);
+					adjustSelectWidth(e.target);
+				}}
+				value={selectedCharJyutping}
+				className={styles.inlineRomDropdown}
+			>
+				{romanizedChar.split("/").map((option, index) => (
+					<option key={index} value={option}>
+						{option}
+					</option>
+				))}
+			</select>
+		</rt>
 	);
 }

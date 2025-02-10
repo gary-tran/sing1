@@ -23,14 +23,26 @@ class Converter:
         )
 
     def convert_syllable(self, word, method):
-        w = self.dict.get(word.lower())
-        if w:
-            syllable = w[method]
-            if method == 0:
-                syllable = self.normalize_yale(syllable)
-            syllable = '0' + syllable
-            return syllable
-        return word
+        word_list = word.split('/')
+        converted_word_list = []
+        for jp in word_list:
+            w = self.dict.get(jp.lower())
+            if w:
+                syllable = w[method]
+                if method == 0:
+                    syllable = self.normalize_yale(syllable)
+                # syllable = '0' + syllable
+                converted_word_list.append(syllable)
+        return '0' + '/'.join(converted_word_list)
+
+        # w = self.dict.get(word.lower())
+        # if w:
+        #     syllable = w[method]
+        #     if method == 0:
+        #         syllable = self.normalize_yale(syllable)
+        #     syllable = '0' + syllable
+        #     return syllable
+        # return word
 
     def normalize_yale(self, syllable):
         num_hash = {

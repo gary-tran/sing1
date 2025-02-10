@@ -46,3 +46,10 @@
 	font-size: 22px;
 	margin-top: 6px;
 }
+
+.inlineRomDropdown {
+	font-size: 22px;
+	border: none;
+	background-color: inherit;
+	outline: none;
+}

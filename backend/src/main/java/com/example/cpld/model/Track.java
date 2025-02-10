@@ -1,13 +1,7 @@
 package com.example.cpld.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import org.hibernate.annotations.LazyToOne;
-import org.hibernate.annotations.LazyToOneOption;
 
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
