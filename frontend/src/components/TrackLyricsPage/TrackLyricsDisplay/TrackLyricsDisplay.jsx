@@ -89,10 +89,41 @@ export default function TrackLyricsDisplay({
 												setHoveredLine(null)
 											}
 										>
-											{line[selectedRomSys].replace(
+											{/* {line[selectedRomSys].replace(
 												/\b0+/g,
 												""
-											)}
+											)} */}
+											{line[selectedRomSys]
+												.split(" ")
+												.map((word, index) => {
+													console.log(word);
+													if (word.includes("/")) {
+														return (
+															<span key={index}>
+																<CharacterRomanizationDropdown
+																	romanizedChar={word.replace(
+																		/\b0+/g,
+																		""
+																	)}
+																	viewMode={
+																		"split"
+																	}
+																/>
+																<span> </span>
+															</span>
+														);
+													} else {
+														return (
+															<span key={index}>
+																{word.replace(
+																	/\b0+/g,
+																	""
+																)}
+																<span> </span>
+															</span>
+														);
+													}
+												})}
 										</div>
 									)
 								)}
@@ -157,15 +188,16 @@ export function InlineLine({ line, selectedRomSys }) {
 					{char}
 					{romanizedChar !== "" ? (
 						romanizedChar.includes("/") ? (
-							// <rt className={styles.inlineRom}>
-							<CharacterRomanizationDropdown
-								romanizedChar={romanizedChar.replace(
-									/\b0+/g,
-									""
-								)}
-							/>
+							<rt className={styles.inlineRom}>
+								<CharacterRomanizationDropdown
+									romanizedChar={romanizedChar.replace(
+										/\b0+/g,
+										""
+									)}
+									viewMode={"inline"}
+								/>
+							</rt>
 						) : (
-							// </rt>
 							<rt className={styles.inlineRom}>
 								{romanizedChar.replace(/\b0+/g, "")}
 							</rt>
@@ -179,7 +211,7 @@ export function InlineLine({ line, selectedRomSys }) {
 	);
 }
 
-export function CharacterRomanizationDropdown({ romanizedChar }) {
+export function CharacterRomanizationDropdown({ romanizedChar, viewMode }) {
 	const [selectedCharJyutping, setSelectedCharJyutping] = useState(
 		romanizedChar.split("/")[0]
 	);
@@ -212,22 +244,24 @@ export function CharacterRomanizationDropdown({ romanizedChar }) {
 	}, [romanizedChar]);
 
 	return (
-		<rt className={styles.inlineRom}>
-			<select
-				ref={romCharSelectRef}
-				onChange={(e) => {
-					setSelectedCharJyutping(e.target.value);
-					adjustSelectWidth(e.target);
-				}}
-				value={selectedCharJyutping}
-				className={styles.inlineRomDropdown}
-			>
-				{romanizedChar.split("/").map((option, index) => (
-					<option key={index} value={option}>
-						{option}
-					</option>
-				))}
-			</select>
-		</rt>
+		<select
+			ref={romCharSelectRef}
+			onChange={(e) => {
+				setSelectedCharJyutping(e.target.value);
+				adjustSelectWidth(e.target);
+			}}
+			value={selectedCharJyutping}
+			className={
+				viewMode === "inline"
+					? styles.inlineRomDropdown
+					: styles.splitRomDropdown
+			}
+		>
+			{romanizedChar.split("/").map((option, index) => (
+				<option key={index} value={option}>
+					{option}
+				</option>
+			))}
+		</select>
 	);
 }

@@ -47,9 +47,14 @@
 	margin-top: 6px;
 }
 
-.inlineRomDropdown {
+.inlineRomDropdown,
+.splitRomDropdown {
 	font-size: 22px;
 	border: none;
 	background-color: inherit;
 	outline: none;
+}
+
+.splitRomDropdown {
+	color: inherit;
 }
