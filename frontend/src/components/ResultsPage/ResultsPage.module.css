@@ -22,29 +22,45 @@
 	font-size: 20px;
 }
 
+.noResultsMessage {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	font-size: 20px;
+}
+
+.resultsMessage {
+	font-size: 20px;
+}
+
 .resultsHeading {
 	width: 100%;
 	text-align: center;
 	color: black;
-	margin-top: 40px;
+	margin-top: 3%;
+	font-size: 20px;
+	font-weight: normal;
 }
 
 .searchQuery {
-	width: 75%;
+	width: 70%;
 	text-align: center;
 	color: black;
 	overflow-wrap: break-word;
-	margin: 0 auto 40px;
+	margin: 0 auto 3%;
 }
 
 .trackResultsList {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
-	/* padding: 0px 20px 25px 20px; */
-	/* gap: 15px; */
-	margin: 0% 5% 40px 5%;
-	justify-content: space-between;
+	margin: 0% 5% 3.5% 5%;
+	gap: 1%;
 	align-items: flex-start;
 	box-sizing: border-box;
+	justify-content: center;
 }

@@ -89,14 +89,9 @@ export default function TrackLyricsDisplay({
 												setHoveredLine(null)
 											}
 										>
-											{/* {line[selectedRomSys].replace(
-												/\b0+/g,
-												""
-											)} */}
 											{line[selectedRomSys]
 												.split(" ")
 												.map((word, index) => {
-													console.log(word);
 													if (word.includes("/")) {
 														return (
 															<span key={index}>

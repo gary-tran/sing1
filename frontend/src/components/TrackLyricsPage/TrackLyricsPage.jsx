@@ -42,7 +42,7 @@ export default function TrackLyricsPage() {
 		return (
 			<div className={styles.trackPage}>
 				<Navbar />
-				<h2 className={styles.loadingMessage}>Loading...</h2>;
+				<h2 className={styles.loadingMessage}>Loading...</h2>
 				<Footer />
 			</div>
 		);
@@ -129,8 +129,20 @@ export default function TrackLyricsPage() {
 									Inline
 								</h3>
 							</div>
-							<div className={styles.lyricsControls}>
-								<div className={styles.plainLyricsControls}>
+							<div
+								className={
+									viewMode === "split"
+										? styles.lyricsControls
+										: styles.inlineLyricsControls
+								}
+							>
+								<div
+									className={
+										viewMode === "split"
+											? styles.plainLyricsControls
+											: styles.plainInlineLyricsControls
+									}
+								>
 									<h3 className={styles.plainLyricsHeading}>
 										Chinese:
 									</h3>
@@ -198,7 +210,6 @@ export default function TrackLyricsPage() {
 								</div>
 							</div>
 						</div>
-						{/* <br /> */}
 						<TrackLyricsDisplay
 							lines={lines}
 							viewMode={viewMode}

@@ -10,6 +10,7 @@ export default function ResultsPage() {
 	const searchParams = new URLSearchParams(location.search);
 	const searchQuery = searchParams.get("q");
 	const [trackResults, setTrackResults] = useState([]);
+	const [isSearching, setIsSearching] = useState(true);
 
 	useEffect(() => {
 		setTrackResults([]);
@@ -21,31 +22,46 @@ export default function ResultsPage() {
 			.then((response) => response.json())
 			.then((data) => setTrackResults(data))
 			.catch((error) => console.error("Error fetching tracks:", error));
+		setIsSearching(false);
 	}, [searchQuery]);
 
 	return (
 		<div className={styles.resultsPage}>
 			<Navbar />
 			<div className={styles.resultsSection}>
-				{trackResults.length == 0 ? (
+				{isSearching == true ? (
 					<h2 className={styles.resultsSearchingHeading}>
 						Searching for results...
 					</h2>
-				) : (
-					<div>
-						<p className={styles.resultsHeading}>
-							Showing all results for
-						</p>
+				) : trackResults.length == 0 ? (
+					<div className={styles.noResultsMessage}>
+						<h2 className={styles.resultsHeading}>
+							There are no results for:
+						</h2>
 						<h2 className={styles.searchQuery}>
 							&quot;{searchQuery}&quot;
 						</h2>
 					</div>
+				) : (
+					<div>
+						<div className={styles.resultsMessage}>
+							<h2 className={styles.resultsHeading}>
+								Showing results for:
+							</h2>
+							<h2 className={styles.searchQuery}>
+								&quot;{searchQuery}&quot;
+							</h2>
+						</div>
+						<ul className={styles.trackResultsList}>
+							{trackResults.map((trackResult) => (
+								<ResultsItem
+									key={trackResult.id}
+									track={trackResult}
+								/>
+							))}
+						</ul>
+					</div>
 				)}
-				<ul className={styles.trackResultsList}>
-					{trackResults.map((trackResult) => (
-						<ResultsItem key={trackResult.id} track={trackResult} />
-					))}
-				</ul>
 			</div>
 			<Footer />
 		</div>

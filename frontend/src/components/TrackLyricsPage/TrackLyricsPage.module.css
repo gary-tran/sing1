@@ -1,12 +1,20 @@
 .errorMessage,
-.loadingMessage,
-.noLyricsMessage {
+.loadingMessage {
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: black;
+	font-size: 20px;
+}
+
+.noLyricsMessage {
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	margin: 5% 5% 0% 5%;
 	font-size: 20px;
 }
 
@@ -21,13 +29,14 @@
 	/* width: 100%; */
 	display: flex;
 	flex-direction: row;
-	margin: 5% 5% 0% 5%;
+	margin: 3.5% 5% 0% 5%;
 }
 
 .trackImage {
 	width: 100%;
-	max-width: 350px;
+	max-width: 450px;
 	height: auto;
+	max-height: fit-content;
 	object-fit: contain;
 	display: block;
 	border-radius: 7px;
@@ -49,21 +58,29 @@
 
 .controls {
 	display: flex;
-	flex-direction: row;
-	margin: calc(3% + 6px) 5% 2.5% 5%;
+	/* flex-direction: row; */
+	flex-direction: column;
+	margin: 2.5% 5% 2% 5%;
 	justify-content: space-between;
 }
 
 .lyricsControls {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
-	gap: 20px;
+	gap: 1.25%;
+}
+
+.inlineLyricsControls {
+	display: flex;
+	flex-direction: column;
 }
 
 .viewModeControls {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	margin-bottom: 1.5%;
 }
 
 .viewCheckbox {
@@ -76,7 +93,7 @@
 	width: 60px;
 	height: 0;
 	background-color: white;
-	border-radius: 7px;
+	border-radius: 5px;
 	margin: 0px 10px;
 }
 
@@ -98,15 +115,28 @@
 }
 
 .plainLyricsControls,
+.plainInlineLyricsControls,
 .romanizationControls {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
+.plainInlineLyricsControls {
+	margin-bottom: 1%;
+}
+
+.plainLyricsControls {
+	width: 35%;
+}
+
+.romanizationControls {
+	width: 65%;
+}
+
 .plainLyricsHeading,
 .romanizationHeading {
-	width: 100%;
+	/* width: 100%; */
 	white-space: nowrap;
 }
 
@@ -119,4 +149,109 @@
 	outline: none;
 	border-radius: 5px;
 	padding: 5px;
+}
+
+@media (max-width: 480px) {
+	.trackInfo {
+		flex-direction: column;
+	}
+
+	.trackDetails {
+		margin-top: 2%;
+		padding-left: 0;
+	}
+
+	.controls {
+		flex-direction: column;
+		margin-top: 6%;
+		margin-bottom: 6%;
+	}
+
+	.viewModeControls {
+		margin-bottom: 2%;
+	}
+
+	.lyricsControls {
+		gap: 0px;
+		flex-direction: column;
+	}
+
+	.plainLyricsControls {
+		margin-bottom: 1%;
+	}
+
+	.plainLyricsHeading,
+	.romanizationHeading {
+		width: auto;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.trackInfo {
+		flex-direction: column;
+	}
+
+	.trackDetails {
+		margin-top: 2%;
+		padding-left: 0;
+	}
+
+	.controls {
+		flex-direction: column;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+
+	.viewModeControls {
+		margin-bottom: 2%;
+	}
+
+	.lyricsControls {
+		gap: 0px;
+		flex-direction: column;
+	}
+
+	.plainLyricsControls {
+		margin-bottom: 1%;
+	}
+
+	.plainLyricsHeading,
+	.romanizationHeading {
+		width: auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.trackInfo {
+		flex-direction: column;
+	}
+
+	.trackDetails {
+		margin-top: 2%;
+		padding-left: 0;
+	}
+
+	.controls {
+		flex-direction: column;
+		margin-top: 4%;
+		margin-bottom: 4%;
+	}
+
+	.viewModeControls {
+		margin-bottom: 2%;
+	}
+
+	.lyricsControls {
+		gap: 0px;
+		flex-direction: column;
+	}
+
+	.plainLyricsControls {
+		margin-bottom: 1%;
+	}
+
+	.plainLyricsHeading,
+	.romanizationHeading {
+		width: auto;
+	}
 }

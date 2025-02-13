@@ -19,15 +19,11 @@ export default function HomePage() {
 
 	return (
 		<div className={styles.homePage}>
-			<Navbar />
+			{/* <Navbar /> */}
 			<div className={styles.mainContent}>
-				<h1 className={styles.mainHeading}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</h1>
+				<h1 className={styles.mainHeading}>Good morning.</h1>
 				<h3 className={styles.subHeading}>
-					Aenean ut leo id libero volutpat commodo vel quis libero.
-					Suspendisse ante nisi, sollicitudin at condimentum a,
-					lobortis non ex.
+					Good morning, good afternoon, good evening, and goodnight.
 				</h3>
 				<div className={styles.searchContainer}>
 					<form className={styles.searchBar} onSubmit={handleSearch}>
@@ -66,7 +62,7 @@ export default function HomePage() {
 					</form>
 				</div>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 }
