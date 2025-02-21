@@ -23,44 +23,37 @@
 }
 
 .noResultsMessage {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: black;
-	font-size: 20px;
+	margin: 4rem;
+	white-space: wrap;
+	overflow-wrap: break-word;
 }
 
 .resultsMessage {
-	font-size: 20px;
+	margin: 4rem;
+	white-space: wrap;
+	overflow-wrap: break-word;
 }
 
 .resultsHeading {
 	width: 100%;
-	text-align: center;
-	color: black;
-	margin-top: 3%;
-	font-size: 20px;
+	font-size: 1.75rem;
+	color: rgb(160, 160, 160);
 	font-weight: normal;
 }
 
 .searchQuery {
-	width: 70%;
-	text-align: center;
 	color: black;
-	overflow-wrap: break-word;
-	margin: 0 auto 3%;
+	font-size: 7rem;
 }
 
 .trackResultsList {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
-	margin: 0% 5% 3.5% 5%;
-	gap: 1%;
+	margin: 0 4rem 4rem 4rem;
+	gap: 1rem;
 	align-items: flex-start;
 	box-sizing: border-box;
-	justify-content: center;
+	justify-content: space-between;
+	/* justify-content: center; */
 }

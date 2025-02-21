@@ -37,12 +37,22 @@ export default function TrackLyricsPage() {
 	}, [spotifyId]);
 
 	if (error) {
-		return <h2 className={styles.errorMessage}>Error...</h2>;
+		return (
+			<div className={styles.trackPage}>
+				<Navbar />
+				<div className={styles.errorSection}>
+					<h2 className={styles.errorMessage}>Error...</h2>
+				</div>
+				<Footer />
+			</div>
+		);
 	} else if (trackLyrics === null) {
 		return (
 			<div className={styles.trackPage}>
 				<Navbar />
-				<h2 className={styles.loadingMessage}>Loading...</h2>
+				<div className={styles.loadingSection}>
+					<h2 className={styles.loadingMessage}>Loading...</h2>
+				</div>
 				<Footer />
 			</div>
 		);
@@ -96,58 +106,43 @@ export default function TrackLyricsPage() {
 					</div>
 				</div>
 				{trackLyrics === null || !trackLyrics.plainLyricsTraditional ? (
-					<h2 className={styles.noLyricsMessage}>
-						There aren&apos;t lyrics for this song... yet.
-					</h2>
+					<div className={styles.noLyricsSection}>
+						<h2 className={styles.noLyricsMessage}>
+							There aren&apos;t lyrics for this song... yet.
+						</h2>
+					</div>
 				) : (
-					<>
+					<div className={styles.lyrics}>
 						<div className={styles.controls}>
 							<div className={styles.viewModeControls}>
-								<h3 className={styles.viewModeHeading}>
-									Split
-								</h3>
-								<input
-									type="checkbox"
-									id="toggle"
-									checked={viewMode === "inline"}
-									className={styles.viewCheckbox}
-									onChange={(e) =>
-										setViewMode(
-											e.target.checked
-												? "inline"
-												: "split"
-										)
-									}
-								/>
-								<label
-									htmlFor="toggle"
-									className={styles.viewSwitch}
-								>
-									<span className={styles.viewSlider} />
-								</label>
-								<h3 className={styles.viewModeHeading}>
-									Inline
-								</h3>
-							</div>
-							<div
-								className={
-									viewMode === "split"
-										? styles.lyricsControls
-										: styles.inlineLyricsControls
-								}
-							>
-								<div
-									className={
-										viewMode === "split"
-											? styles.plainLyricsControls
-											: styles.plainInlineLyricsControls
-									}
-								>
-									<h3 className={styles.plainLyricsHeading}>
-										Chinese:
+								<div className={styles.viewModeTopLine}>
+									<h3 className={styles.viewModeHeading}>
+										View Mode
 									</h3>
 									<select
-										className={styles.plainLyricsDropdown}
+										className={styles.viewModeDropdown}
+										value={viewMode}
+										onChange={(e) =>
+											setViewMode(e.target.value)
+										}
+									>
+										<option value="split">Split</option>
+										<option value="inline">Inline</option>
+									</select>
+								</div>
+								<p className={styles.viewModeSubHeading}>
+									Choose between a side-by-side display or
+									romanizations integrated directly above the
+									lyrics.
+								</p>
+							</div>
+							<div className={styles.chineseControls}>
+								<div className={styles.chineseTopLine}>
+									<h3 className={styles.chineseHeading}>
+										Chinese
+									</h3>
+									<select
+										className={styles.chineseDropdown}
 										value={chineseOption}
 										onChange={(e) =>
 											setChineseOption(e.target.value)
@@ -161,9 +156,16 @@ export default function TrackLyricsPage() {
 										</option>
 									</select>
 								</div>
-								<div className={styles.romanizationControls}>
+								<p className={styles.chineseSubHeading}>
+									Choose whether to view the lyrics in
+									Traditional or Simplified Chinese
+									characters.
+								</p>
+							</div>
+							<div className={styles.romanizationControls}>
+								<div className={styles.romanizationTopLine}>
 									<h3 className={styles.romanizationHeading}>
-										Romanization:
+										Romanization
 									</h3>
 									<select
 										className={styles.romanizationDropdown}
@@ -176,10 +178,10 @@ export default function TrackLyricsPage() {
 											Jyutping
 										</option>
 										<option value="yale_tone_numbers">
-											Yale Tone Numbers
+											Yale (Numbers)
 										</option>
 										<option value="yale_tone_diacritics">
-											Yale Tone Marks
+											Yale (Diacritics)
 										</option>
 										<option value="ipa">IPA</option>
 										<option value="cantonese_pinyin">
@@ -192,22 +194,26 @@ export default function TrackLyricsPage() {
 											Sidney Lau
 										</option>
 										<option value="sl_wong_tone_numbers">
-											SL Wong Tone Numbers
+											SL Wong (Numbers)
 										</option>
 										<option value="sl_wong_tone_diacritics">
-											SL Wong Tone Marks
+											SL Wong (Diacritics)
 										</option>
 										<option value="penkyamp_tone_numbers">
-											Penkyamp Tone Numbers
+											Penkyamp (Numbers)
 										</option>
 										<option value="penkyamp_tone_diacritics">
-											Penkyamp Tone Marks
+											Penkyamp (Diacritics)
 										</option>
 										<option value="english_translation">
 											English Translation
 										</option>
 									</select>
 								</div>
+								<p className={styles.romanizationSubHeading}>
+									Choose the romanization system for the
+									pronunciation of the lyrics.
+								</p>
 							</div>
 						</div>
 						<TrackLyricsDisplay
@@ -215,7 +221,7 @@ export default function TrackLyricsPage() {
 							viewMode={viewMode}
 							selectedRomSys={selectedRomSys}
 						/>
-					</>
+					</div>
 				)}
 				<Footer />
 			</div>

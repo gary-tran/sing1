@@ -31,11 +31,11 @@ export default function ResultsItem({ track }) {
 				/>
 				<div className={styles.trackInfo}>
 					<h3 className={styles.trackTitle}>{track.title}</h3>
-					<p className={styles.trackArtist}>{track.artist}</p>
-					<p className={styles.trackYear}>
+					<h3 className={styles.trackArtist}>by {track.artist}</h3>
+					<h3 className={styles.trackYear}>
 						{track.album}&nbsp;•&nbsp;
 						{track.releaseDate.substring(0, 4)}
-					</p>
+					</h3>
 				</div>
 			</a>
 		</li>

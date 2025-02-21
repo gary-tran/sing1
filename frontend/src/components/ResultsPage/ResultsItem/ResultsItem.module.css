@@ -3,21 +3,24 @@
 	flex-direction: column;
 	box-sizing: border-box;
 	margin-bottom: 15px;
-	width: 20%;
-	min-width: 415px;
-	border: 1px solid black;
+	flex: 1;
+	min-width: 22rem;
+	max-width: 28rem;
 	border-radius: 6px;
+	text-overflow: ellipsis;
+	background: #f0f0f0;
 }
 
 .resultLink {
 	display: flex;
-	flex-direction: row;
-	/* flex-direction: column; */
+	/* flex-direction: row; */
+	flex-direction: column;
 	width: 100%;
-	padding: 10px;
+	padding: 1rem;
 	cursor: pointer;
 	border-radius: 5px;
-	background: white;
+	background: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .resultLink:hover {
@@ -25,39 +28,44 @@
 }
 
 .imgURL {
-	width: auto;
+	width: 100%;
 	height: auto;
-	max-height: 150px;
-	margin-right: 10px;
-	border-radius: 4px;
+	max-height: fit-content;
+	object-fit: cover;
+	display: block;
+	border-radius: 7px;
+	aspect-ratio: 1/1;
 }
 
 .trackInfo {
 	color: black;
 	overflow: hidden;
-	padding-top: 1%;
+	padding-top: 0.5rem;
 	display: flex;
 	flex-direction: column;
 }
 
-/* .trackTitle,
-.trackArtist {
+.trackTitle,
+.trackArtist,
+.trackYear {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin: 0;
-} */
+}
 
 .trackTitle {
-	font-size: 22px;
+	font-size: 1.75rem;
+	padding-bottom: 0.1rem;
 }
 
 .trackArtist {
-	font-size: 18px;
-	margin: 0;
-	margin-bottom: auto;
+	font-size: 1.25rem;
+	padding-bottom: 0.35rem;
+	font-weight: normal;
 }
 
 .trackYear {
-	font-size: 18px;
+	font-size: 1.25rem;
+	font-weight: normal;
 }

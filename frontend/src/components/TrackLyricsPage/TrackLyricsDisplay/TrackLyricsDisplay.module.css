@@ -3,9 +3,9 @@
 	display: flex;
 	flex: 1;
 	color: black;
-	margin: 0% 5% 3.5% 5%;
-	font-size: 22px;
-	gap: 1.25%;
+	font-size: 1.5rem;
+	gap: 1.5rem;
+	min-width: 50%;
 }
 
 .plainLyricsSection,
@@ -17,6 +17,11 @@
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	padding: 1rem;
+	width: 100%;
 }
 
 .plainLyricsSection {
@@ -31,6 +36,7 @@
 	background-color: black;
 	border-color: black;
 	color: white;
+	border-radius: 4px;
 }
 
 .trackLyricsInlineSection {
@@ -42,21 +48,24 @@
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	padding: 1rem;
 }
 
 .inlineBox {
-	font-size: 22px;
-	margin: 0 6px;
+	margin: 0 0.5rem;
 }
 
 .inlineRom {
-	font-size: 22px;
-	margin-top: 6px;
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
 }
 
 .inlineRomDropdown,
 .splitRomDropdown {
-	font-size: 22px;
+	font-size: 1.5rem;
 	border: none;
 	background-color: inherit;
 	outline: none;

@@ -1,21 +1,36 @@
-.errorMessage,
-.loadingMessage {
-	width: 100%;
-	height: 100vh;
+.errorSection,
+.loadingSection {
+	height: 100%;
+	border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	margin: 0 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.errorMessage,
+.loadingMessage {
 	color: black;
-	font-size: 20px;
+	font-size: 1.75rem;
+}
+
+.noLyricsSection {
+	height: 100%;
+	border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	margin: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .noLyricsMessage {
-	height: 100%;
-	justify-content: center;
-	align-items: center;
 	color: black;
-	margin: 5% 5% 0% 5%;
-	font-size: 20px;
+	font-size: 1.5rem;
+	padding: 1rem;
 }
 
 .trackPage {
@@ -26,15 +41,17 @@
 }
 
 .trackInfo {
-	/* width: 100%; */
 	display: flex;
 	flex-direction: row;
-	margin: 3.5% 5% 0% 5%;
+	flex-wrap: wrap;
+	margin: 2rem 4rem 0rem 4rem;
+	row-gap: 1.5rem;
+	column-gap: 1.5rem;
 }
 
 .trackImage {
 	width: 100%;
-	max-width: 450px;
+	max-width: 25rem;
 	height: auto;
 	max-height: fit-content;
 	object-fit: contain;
@@ -44,214 +61,91 @@
 
 .trackDetails {
 	width: 100%;
+	min-width: 50%;
 	display: flex;
 	flex-direction: column;
-	padding-left: 2.5%;
-	font-size: 50px;
 	justify-content: end;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	flex: 1;
 }
 
 .trackAlbumYear,
 .trackArtist {
-	font-size: 35px;
+	font-size: 1.75rem;
+	color: rgb(160, 160, 160);
+}
+
+.trackTitle {
+	font-size: 7rem;
+}
+
+.lyrics {
+	display: flex;
+	flex-direction: row;
+	margin: 1.5rem 4rem 2rem 4rem;
+	flex-wrap: wrap;
+	row-gap: 1.5rem;
+	column-gap: 1.5rem;
 }
 
 .controls {
-	display: flex;
-	/* flex-direction: row; */
-	flex-direction: column;
-	margin: 2.5% 5% 2% 5%;
-	justify-content: space-between;
-}
-
-.lyricsControls {
 	width: 100%;
+	max-width: 25rem;
 	display: flex;
-	flex-direction: row;
-	gap: 1.25%;
+	flex-direction: column;
+	border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	padding: 1rem;
+	height: fit-content;
 }
 
-.inlineLyricsControls {
+.viewModeControls,
+.chineseControls,
+.romanizationControls {
 	display: flex;
 	flex-direction: column;
 }
 
-.viewModeControls {
+.chineseControls {
+	margin: 1.5rem 0;
+}
+
+.viewModeTopLine,
+.chineseTopLine,
+.romanizationTopLine {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-bottom: 1.5%;
+	justify-content: space-between;
+	row-gap: 0.25rem;
+	margin-bottom: 0.25rem;
+	flex-wrap: wrap;
 }
 
-.viewCheckbox {
-	display: none;
-}
-
-.viewSwitch {
-	position: relative;
-	border: 1px solid black;
-	width: 60px;
-	height: 0;
-	background-color: white;
-	border-radius: 5px;
-	margin: 0px 10px;
-}
-
-.viewSlider {
-	position: absolute;
-	width: 27px;
-	height: 27px;
-	background-color: white;
-	border-radius: 5px;
-	left: 3px;
-	transform: translateY(-50%);
-	transition: all 0.25s ease;
-	border: 1px solid black;
-	cursor: pointer;
-}
-
-.viewCheckbox:checked + .viewSwitch .viewSlider {
-	left: calc(100% - 27px - 3px);
-}
-
-.plainLyricsControls,
-.plainInlineLyricsControls,
-.romanizationControls {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.plainInlineLyricsControls {
-	margin-bottom: 1%;
-}
-
-.plainLyricsControls {
-	width: 35%;
-}
-
-.romanizationControls {
-	width: 65%;
-}
-
-.plainLyricsHeading,
+.viewModeHeading,
+.chineseHeading,
 .romanizationHeading {
-	/* width: 100%; */
-	white-space: nowrap;
+	font-size: 1.25rem;
 }
 
-.romanizationDropdown,
-.plainLyricsDropdown {
-	font-size: 16px;
-	margin-left: 5px;
-	align-items: center;
-	justify-content: center;
+.viewModeDropdown,
+.chineseDropdown,
+.romanizationDropdown {
+	width: 12.5rem;
+	font-size: 1rem;
+	align-items: flex-end;
+	justify-content: flex-end;
 	outline: none;
-	border-radius: 5px;
-	padding: 5px;
+	border-radius: 4px;
+	padding: 0.25rem;
+	height: fit-content;
 }
 
-@media (max-width: 480px) {
-	.trackInfo {
-		flex-direction: column;
-	}
-
-	.trackDetails {
-		margin-top: 2%;
-		padding-left: 0;
-	}
-
-	.controls {
-		flex-direction: column;
-		margin-top: 6%;
-		margin-bottom: 6%;
-	}
-
-	.viewModeControls {
-		margin-bottom: 2%;
-	}
-
-	.lyricsControls {
-		gap: 0px;
-		flex-direction: column;
-	}
-
-	.plainLyricsControls {
-		margin-bottom: 1%;
-	}
-
-	.plainLyricsHeading,
-	.romanizationHeading {
-		width: auto;
-	}
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-	.trackInfo {
-		flex-direction: column;
-	}
-
-	.trackDetails {
-		margin-top: 2%;
-		padding-left: 0;
-	}
-
-	.controls {
-		flex-direction: column;
-		margin-top: 5%;
-		margin-bottom: 5%;
-	}
-
-	.viewModeControls {
-		margin-bottom: 2%;
-	}
-
-	.lyricsControls {
-		gap: 0px;
-		flex-direction: column;
-	}
-
-	.plainLyricsControls {
-		margin-bottom: 1%;
-	}
-
-	.plainLyricsHeading,
-	.romanizationHeading {
-		width: auto;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-	.trackInfo {
-		flex-direction: column;
-	}
-
-	.trackDetails {
-		margin-top: 2%;
-		padding-left: 0;
-	}
-
-	.controls {
-		flex-direction: column;
-		margin-top: 4%;
-		margin-bottom: 4%;
-	}
-
-	.viewModeControls {
-		margin-bottom: 2%;
-	}
-
-	.lyricsControls {
-		gap: 0px;
-		flex-direction: column;
-	}
-
-	.plainLyricsControls {
-		margin-bottom: 1%;
-	}
-
-	.plainLyricsHeading,
-	.romanizationHeading {
-		width: auto;
-	}
+.viewModeSubHeading,
+.chineseSubHeading,
+.romanizationSubHeading {
+	font-size: 1rem;
+	color: rgb(140, 140, 140);
 }

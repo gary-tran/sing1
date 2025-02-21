@@ -219,11 +219,11 @@ export function CharacterRomanizationDropdown({ romanizedChar, viewMode }) {
 		dummy.style.position = "absolute";
 		dummy.style.visibility = "hidden";
 		dummy.style.whiteSpace = "nowrap";
-		dummy.style.fontSize = "22px";
+		dummy.style.fontSize = "1.5rem";
 		document.body.appendChild(dummy);
 		const measuredWidth = dummy.clientWidth;
 		document.body.removeChild(dummy);
-		e.style.width = `${measuredWidth + 20}px`;
+		e.style.width = `${(measuredWidth + 20) / 16}rem`;
 	};
 
 	useEffect(() => {
