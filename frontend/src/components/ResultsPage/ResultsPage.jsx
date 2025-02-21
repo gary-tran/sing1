@@ -30,9 +30,11 @@ export default function ResultsPage() {
 			<Navbar />
 			<div className={styles.resultsSection}>
 				{isSearching == true ? (
-					<h2 className={styles.resultsSearchingHeading}>
-						Searching for results...
-					</h2>
+					<div className={styles.searchingSection}>
+						<h2 className={styles.searchingMessage}>
+							Searching for results...
+						</h2>
+					</div>
 				) : trackResults.length == 0 ? (
 					<div className={styles.noResultsMessage}>
 						<h2 className={styles.resultsHeading}>

@@ -2,18 +2,17 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	width: 100%;
-	padding: 34.5px 4rem;
-	/* border-top: solid 1px black; */
+	margin: 0 max(1.5rem, 4vw);
+	height: 6rem;
 	list-style: none;
 }
 
 .footerItem {
-	font-size: 13px;
+	font-size: 0.85rem;
 }
 
 .footerLink {
-	margin: 0 20px 0 0;
+	margin: 0 1.5rem 0 0;
 	color: black;
 	text-decoration: none;
 }
@@ -21,4 +20,5 @@
 .copyright {
 	margin-left: auto;
 	color: black;
+	font-size: 1rem;
 }

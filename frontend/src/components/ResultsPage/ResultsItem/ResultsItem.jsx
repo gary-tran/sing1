@@ -23,21 +23,19 @@ export default function ResultsItem({ track }) {
 
 	return (
 		<li className={styles.resultRow} onClick={handleClick}>
-			<a className={styles.resultLink}>
-				<img
-					className={styles.imgURL}
-					src={track.imageUrl}
-					alt={track.album}
-				/>
-				<div className={styles.trackInfo}>
-					<h3 className={styles.trackTitle}>{track.title}</h3>
-					<h3 className={styles.trackArtist}>by {track.artist}</h3>
-					<h3 className={styles.trackYear}>
-						{track.album}&nbsp;•&nbsp;
-						{track.releaseDate.substring(0, 4)}
-					</h3>
-				</div>
-			</a>
+			<img
+				className={styles.imgURL}
+				src={track.imageUrl}
+				alt={track.album}
+			/>
+			<div className={styles.trackInfo}>
+				<h3 className={styles.trackTitle}>{track.title}</h3>
+				<h3 className={styles.trackArtist}>{track.artist}</h3>
+				<h3 className={styles.trackYear}>
+					{track.album}&nbsp;•&nbsp;
+					{track.releaseDate.substring(0, 4)}
+				</h3>
+			</div>
 		</li>
 	);
 }
