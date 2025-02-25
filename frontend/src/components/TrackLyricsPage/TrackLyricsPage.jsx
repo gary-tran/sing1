@@ -205,9 +205,9 @@ export default function TrackLyricsPage() {
 										<option value="penkyamp_tone_diacritics">
 											Penkyamp (Diacritics)
 										</option>
-										<option value="english_translation">
+										{/* <option value="english_translation">
 											English Translation
-										</option>
+										</option> */}
 									</select>
 								</div>
 								<p className={styles.romanizationSubHeading}>

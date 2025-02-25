@@ -21,10 +21,13 @@ export default function HomePage() {
 		<div className={styles.homePage}>
 			<Navbar />
 			<div className={styles.mainContent}>
-				<h1 className={styles.mainHeading}>Lorem ipsum...</h1>
+				<h1 className={styles.mainHeading}>
+					Sing along to your favorite Cantonese songs.
+				</h1>
 				<h3 className={styles.subHeading}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-					efficitur.
+					Explore thousands of Cantonese song lyrics, featuring 11
+					romanization systems designed to help you pronounce each
+					word accurately and sing along with ease.
 				</h3>
 				<div className={styles.searchContainer}>
 					<form className={styles.searchBar} onSubmit={handleSearch}>

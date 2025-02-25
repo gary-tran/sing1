@@ -21,7 +21,7 @@ export default function Navbar() {
 		<nav>
 			<div className={styles.navbarList}>
 				<NavLink to="/" className={styles.homeButton}>
-					Lorem
+					聲(sing1)
 				</NavLink>
 				{showSearchBar && (
 					<div className={styles.searchContainer}>

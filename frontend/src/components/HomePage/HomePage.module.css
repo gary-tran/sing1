@@ -20,17 +20,17 @@
 }
 
 .mainHeading {
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
-	font-size: 7rem;
+	font-size: 6rem;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 }
 
 .subHeading {
-	width: 60%;
+	width: 70%;
 	margin: 0 auto;
-	padding-bottom: 1rem;
+	margin-bottom: 1rem;
 	font-size: 1.75rem;
 	color: rgb(160, 160, 160);
 	font-weight: normal;
@@ -46,7 +46,7 @@
 }
 
 .searchBar {
-	width: 60%;
+	width: 40%;
 	min-width: 20rem;
 	background: white;
 	display: flex;
