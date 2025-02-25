@@ -10,7 +10,7 @@ import TrackLyricsDisplay from "./TrackLyricsDisplay/TrackLyricsDisplay";
 export default function TrackLyricsPage() {
 	const { spotifyId } = useParams();
 	const [trackLyrics, setTrackLyrics] = useState(null);
-	// const [error, setError] = useState(null);
+	const [error, setError] = useState(null);
 	const [selectedRomSys, setSelectedRomSys] = useState("jyutping");
 	const [chineseOption, setChineseOption] = useState("traditional");
 	const [viewMode, setViewMode] = useState("split");
@@ -55,10 +55,15 @@ export default function TrackLyricsPage() {
 		const fetchLyrics = async () => {
 			if (!spotifyId) return;
 
-			const response = fuse
-				.search(spotifyId, { limit: 1 })
-				.map((track) => track.item);
-			setTrackLyrics(response[0]);
+			try {
+				const response = fuse
+					.search(spotifyId, { limit: 1 })
+					.map((track) => track.item);
+
+				setTrackLyrics(response[0]);
+			} catch (error) {
+				setError(error);
+			}
 		};
 		if (spotifyId) {
 			fetchLyrics();
