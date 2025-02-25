@@ -14,9 +14,9 @@
 
 .searchingSection {
 	height: 100%;
-	border-radius: 7px;
+	/* border-radius: 7px;
 	background-color: #f0f0f0;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08); */
 	margin: 0 max(1.5rem, 4vw);
 	display: flex;
 	justify-content: center;
@@ -40,7 +40,7 @@
 .resultsHeading {
 	width: 100%;
 	font-size: 1.75rem;
-	color: rgb(160, 160, 160);
+	color: #aaaaaa;
 	font-weight: normal;
 }
 

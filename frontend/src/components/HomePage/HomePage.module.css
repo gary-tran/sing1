@@ -13,7 +13,7 @@
 	text-align: center;
 	color: black;
 	border-radius: 7px;
-	background-color: #f0f0f0;
+	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 	margin: 0 max(1.5rem, 4vw);
 	padding: 4rem;
@@ -32,7 +32,7 @@
 	margin: 0 auto;
 	margin-bottom: 1rem;
 	font-size: 1.75rem;
-	color: rgb(160, 160, 160);
+	color: #999999;
 	font-weight: normal;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -68,7 +68,7 @@
 }
 
 ::placeholder {
-	color: #e0e0e0;
+	color: #dddddd;
 }
 
 .searchButton {
@@ -76,7 +76,6 @@
 	border-radius: 4px;
 	width: 2.5rem;
 	height: 2.5rem;
-	background-color: #f0f0f0;
 	cursor: pointer;
 	padding-top: 2px;
 	transition: background-color 0.35s ease, color 0.35s ease;

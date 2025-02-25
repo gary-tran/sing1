@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -8,6 +8,10 @@ export default function HomePage() {
 	const navigate = useNavigate();
 	const [searchInput, setSearchInput] = useState("");
 	const isInputEmpty = searchInput.trim() === "";
+
+	useEffect(() => {
+		document.title = "聲(sing1)";
+	});
 
 	const handleSearch = (e) => {
 		e.preventDefault();
@@ -44,7 +48,7 @@ export default function HomePage() {
 							disabled={isInputEmpty}
 							style={{
 								backgroundColor: isInputEmpty
-									? "#f2f0ef"
+									? "#eeeeee"
 									: "black",
 								cursor: isInputEmpty
 									? "not-allowed"

@@ -61,6 +61,7 @@ export default function TrackLyricsPage() {
 					.map((track) => track.item);
 
 				setTrackLyrics(response[0]);
+				document.title = `${response[0].track.title} by ${response[0].track.artist} - 聲(sing1)`;
 			} catch (error) {
 				setError(error);
 			}

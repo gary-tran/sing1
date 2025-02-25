@@ -42,7 +42,7 @@ export default function Navbar() {
 								disabled={isInputEmpty}
 								style={{
 									backgroundColor: isInputEmpty
-										? "#f2f0ef"
+										? "#eeeeee"
 										: "black",
 									cursor: isInputEmpty
 										? "not-allowed"

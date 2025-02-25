@@ -47,7 +47,7 @@
 }
 
 ::placeholder {
-	color: lightgray;
+	color: #dddddd;
 }
 
 .searchButton {
@@ -55,7 +55,6 @@
 	border-radius: 4px;
 	width: 1.75rem;
 	height: 1.75rem;
-	background-color: #f2f0ef;
 	cursor: pointer;
 	padding-top: 2px;
 	transition: background-color 0.35s ease, color 0.35s ease;

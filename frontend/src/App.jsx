@@ -5,6 +5,7 @@ import PrivacyPage from "./components/PrivacyPage/PrivacyPage.jsx";
 import TermsPage from "./components/TermsPage/TermsPage.jsx";
 import ContactPage from "./components/ContactPage/ContactPage.jsx";
 import TrackLyricsPage from "./components/TrackLyricsPage/TrackLyricsPage.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 // import ArtistPage from "./components/ArtistPage/ArtistPage.jsx";
 // import AlbumPage from "./components/AlbumPage/AlbumPage.jsx";
 import "./App.css";
@@ -29,6 +30,7 @@ export default function App() {
 					path="/track/:artist/:title/:spotifyId"
 					element={<TrackLyricsPage />}
 				/>
+				<Route path="*" element={<ErrorPage />} />
 				{/* <Route path="/artist/:name" element={<ArtistPage />} />
 				<Route path="/album/:artist/:title" element={<AlbumPage />} /> */}
 			</Routes>
