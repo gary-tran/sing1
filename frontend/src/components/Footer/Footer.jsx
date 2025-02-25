@@ -8,15 +8,15 @@ export default function Footer() {
 				<li className={styles.copyright}>
 					<p>© 2025 聲(sing1). All rights reserved.</p>
 				</li>
-				<div className={styles.footerLinks}>
+				{/* <div className={styles.footerLinks}>
 					<li className={styles.footerItem}>
 						<NavLink to="/terms" className={styles.footerLink}>
-							Terms of Service
+							Terms
 						</NavLink>
 					</li>
 					<li className={styles.footerItem}>
 						<NavLink to="/privacy" className={styles.footerLink}>
-							Privacy Policy
+							Privacy
 						</NavLink>
 					</li>
 
@@ -25,7 +25,7 @@ export default function Footer() {
 							Contact
 						</NavLink>
 					</li>
-				</div>
+				</div> */}
 			</ul>
 		</footer>
 	);
