@@ -12,14 +12,14 @@
 	justify-content: center;
 	text-align: center;
 	color: black;
-	margin: 0 max(1.5rem, 4vw);
-	padding: 4rem;
+	margin: 0 clamp(1rem, 5vw, 4rem);
+	padding: clamp(1.5rem, 4vw, 4rem);
 }
 
 .mainHeading {
 	width: 90%;
 	margin: 0 auto;
-	font-size: 6rem;
+	font-size: clamp(3rem, 8vw, 6rem);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 }
@@ -27,8 +27,8 @@
 .subHeading {
 	width: 70%;
 	margin: 0 auto;
-	margin-bottom: 1rem;
-	font-size: 1.75rem;
+	margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 	color: #aaaaaa;
 	font-weight: normal;
 	word-wrap: break-word;
@@ -36,8 +36,8 @@
 }
 
 .homeButton {
-	font-size: 1.25rem;
-	padding: 0.75rem;
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	padding: clamp(0.25rem, 1.2vw, 0.75rem);
 	border-radius: 7px;
 	border: 1px solid black;
 	margin: 0 auto;

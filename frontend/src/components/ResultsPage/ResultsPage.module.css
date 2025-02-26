@@ -44,7 +44,7 @@
 
 .searchQuery {
 	color: black;
-	font-size: clamp(2.5rem, 6vw, 6rem);
+	font-size: clamp(3rem, 8vw, 6rem);
 }
 
 .trackResultsList {

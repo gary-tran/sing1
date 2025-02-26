@@ -58,8 +58,8 @@ export default function ResultsPage() {
 	useEffect(() => {
 		document.title = `${searchQuery} - 聲(sing1)`;
 		setTrackResults([]);
-		// const fuseResults = fuse.search(searchQuery).map((track) => track.item);
-		// setTrackResults(fuseResults);
+		const fuseResults = fuse.search(searchQuery).map((track) => track.item);
+		setTrackResults(fuseResults);
 		setIsSearching(false);
 	}, [searchQuery, fuse]);
 

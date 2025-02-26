@@ -46,14 +46,14 @@
 }
 
 .trackTitle {
-	font-size: clamp(1.25rem, 3vw, 1.75rem);
+	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 	padding-bottom: clamp(0.05rem, 0.25vw, 0.15rem);
 	line-height: clamp(1.5rem, 3vw, 2rem);
 }
 
 .trackArtist,
 .trackYear {
-	font-size: clamp(1rem, 2.5vw, 1.25rem);
+	font-size: clamp(1rem, 2vw, 1.25rem);
 	font-weight: normal;
 	line-height: clamp(1.25rem, 3vw, 1.75rem);
 }
