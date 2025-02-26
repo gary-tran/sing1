@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./TrackLyricsDisplay.module.css";
 
 export default function TrackLyricsDisplay({
@@ -219,24 +219,37 @@ export function CharacterRomanizationDropdown({ romanizedChar, viewMode }) {
 		dummy.style.position = "absolute";
 		dummy.style.visibility = "hidden";
 		dummy.style.whiteSpace = "nowrap";
-		dummy.style.fontSize = "1.5rem";
+		dummy.style.fontSize = "clamp(1.25rem, 4vw, 1.5rem)";
 		document.body.appendChild(dummy);
 		const measuredWidth = dummy.clientWidth;
 		document.body.removeChild(dummy);
 		e.style.width = `${(measuredWidth + 20) / 16}rem`;
 	};
 
-	useEffect(() => {
+	const updateDropdownWidth = useCallback(() => {
 		if (romCharSelectRef.current) {
-			adjustSelectWidth(romCharSelectRef.current);
+			const selectElement = romCharSelectRef.current;
+			adjustSelectWidth(selectElement);
 		}
-	}, [selectedCharJyutping]);
+	}, []); // The function is memoized and won't change on re-renders
 
 	useEffect(() => {
-		if (romCharSelectRef.current) {
-			adjustSelectWidth(romCharSelectRef.current);
-		}
-	}, [romanizedChar]);
+		updateDropdownWidth(); // Adjust width when `selectedCharJyutping` changes
+	}, [selectedCharJyutping, updateDropdownWidth]);
+
+	useEffect(() => {
+		updateDropdownWidth(); // Adjust width when `romanizedChar` changes
+	}, [romanizedChar, updateDropdownWidth]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			updateDropdownWidth();
+		};
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [updateDropdownWidth]);
 
 	return (
 		<select

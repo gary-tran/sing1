@@ -3,8 +3,8 @@
 	display: flex;
 	flex: 1;
 	color: black;
-	font-size: 1.5rem;
-	gap: 1.5rem;
+	font-size: clamp(1.25rem, 4vw, 1.5rem);
+	gap: clamp(1rem, 3vw, 1.5rem);
 	min-width: 50%;
 }
 
@@ -20,7 +20,7 @@
 	border-radius: 7px;
 	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: 1rem;
+	padding: clamp(0.75rem, 2vw, 1rem);
 	width: 100%;
 }
 
@@ -44,28 +44,28 @@
 	display: flex;
 	justify-content: start;
 	flex-direction: column;
-	line-height: 1.75;
+	line-height: clamp(1.5, 4vw, 1.75);
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	border-radius: 7px;
 	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: 1rem;
+	padding: clamp(0.75rem, 2vw, 1rem);
 }
 
 .inlineBox {
-	margin: 0 0.5rem;
+	margin: 0 clamp(0.25rem, 2vw, 0.5rem);
 }
 
 .inlineRom {
-	font-size: 1.5rem;
-	margin-top: 0.5rem;
+	font-size: clamp(1.25rem, 4vw, 1.5rem);
+	margin-top: clamp(0.25rem, 2vw, 0.5rem);
 }
 
 .inlineRomDropdown,
 .splitRomDropdown {
-	font-size: 1.5rem;
+	font-size: clamp(1.25rem, 4vw, 1.5rem);
 	border: none;
 	background-color: inherit;
 	outline: none;
