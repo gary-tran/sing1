@@ -2,9 +2,7 @@ import styles from "./TrackLyricsPage.module.css";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { useEffect, useState, useMemo } from "react";
-import lyrics from "../../data/lyrics.json";
-import Fuse from "fuse.js";
+import { useEffect, useState } from "react";
 import TrackLyricsDisplay from "./TrackLyricsDisplay/TrackLyricsDisplay";
 
 export default function TrackLyricsPage() {
@@ -15,53 +13,20 @@ export default function TrackLyricsPage() {
 	const [chineseOption, setChineseOption] = useState("traditional");
 	const [viewMode, setViewMode] = useState("split");
 
-	// useEffect(() => {
-	// 	const fetchLyrics = async () => {
-	// 		if (!spotifyId) return;
-	// 		try {
-	// 			const response = await fetch(
-	// 				`http://localhost:8080/api/lyrics/${spotifyId}`
-	// 			);
-
-	// 			if (!response.ok) {
-	// 				throw new Error("Failed to fetch lyrics");
-	// 			}
-
-	// 			const data = await response.json();
-	// 			setTrackLyrics(data);
-	// 		} catch (error) {
-	// 			setError(error);
-	// 		}
-	// 	};
-	// 	if (spotifyId) {
-	// 		fetchLyrics();
-	// 	}
-	// }, [spotifyId]);
-
-	const fuseOptions = useMemo(
-		() => ({
-			threshold: 0,
-			minMatchCharLength: 22,
-			keys: ["spotifyId"],
-		}),
-		[]
-	);
-
-	const fuse = useMemo(() => {
-		return new Fuse(lyrics, fuseOptions);
-	}, [fuseOptions]);
-
 	useEffect(() => {
 		const fetchLyrics = async () => {
 			if (!spotifyId) return;
-
 			try {
-				const response = fuse
-					.search(spotifyId, { limit: 1 })
-					.map((track) => track.item);
+				const response = await fetch(
+					`http://localhost:8080/api/lyrics/${spotifyId}`
+				);
 
-				setTrackLyrics(response[0]);
-				document.title = `${response[0].track.title} by ${response[0].track.artist} - 聲(sing1)`;
+				if (!response.ok) {
+					throw new Error("Failed to fetch lyrics");
+				}
+
+				const data = await response.json();
+				setTrackLyrics(data);
 			} catch (error) {
 				setError(error);
 			}
@@ -69,7 +34,9 @@ export default function TrackLyricsPage() {
 		if (spotifyId) {
 			fetchLyrics();
 		}
-	}, [spotifyId, fuse]);
+	}, [spotifyId]);
+
+	console.log(trackLyrics);
 
 	if (error) {
 		return (

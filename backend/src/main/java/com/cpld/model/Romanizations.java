@@ -1,4 +1,4 @@
-package com.example.cpld.model;
+package com.cpld.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

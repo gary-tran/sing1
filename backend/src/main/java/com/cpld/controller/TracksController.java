@@ -1,8 +1,9 @@
-package com.example.cpld.controller;
+package com.cpld.controller;
 
-import com.example.cpld.model.Track;
-import com.example.cpld.service.TracksService;
 import org.springframework.web.bind.annotation.*;
+
+import com.cpld.model.Track;
+import com.cpld.service.TracksService;
 
 import java.util.List;
 

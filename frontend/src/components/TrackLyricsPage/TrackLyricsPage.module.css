@@ -1,17 +1,20 @@
 .errorSection,
 .loadingSection {
 	height: 100%;
-	margin: 0 clamp(1.5rem, 4vw, 4rem);
+	/* border-radius: 7px;
+	background-color: #f0f0f0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08); */
+	margin: 0 max(1.5rem, 4vw);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: clamp(1rem, 2vw, 2rem);
+	padding: 2rem;
 }
 
 .errorMessage,
 .loadingMessage {
 	color: black;
-	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+	font-size: 1.75rem;
 }
 
 .noLyricsSection {
@@ -19,16 +22,16 @@
 	border-radius: 7px;
 	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	margin: clamp(1.5rem, 4vw, 4rem);
+	margin: max(1.5rem, 4vw);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: clamp(1rem, 2vw, 2rem);
+	padding: 2rem;
 }
 
 .noLyricsMessage {
 	color: black;
-	font-size: clamp(1.25rem, 4vw, 1.5rem);
+	font-size: 1.5rem;
 }
 
 .trackPage {
@@ -42,15 +45,14 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 4rem)
-		clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 4rem);
-	row-gap: clamp(1rem, 2vw, 1.5rem);
-	column-gap: clamp(1rem, 2vw, 1.5rem);
+	margin: 2rem max(1.5rem, 4vw) 1.5rem max(1.5rem, 4vw);
+	row-gap: 1.5rem;
+	column-gap: 1.5rem;
 }
 
 .trackImage {
 	width: 100%;
-	max-width: clamp(25rem, 30vw, 30rem);
+	max-width: 25rem;
 	height: auto;
 	max-height: fit-content;
 	object-fit: contain;
@@ -71,33 +73,32 @@
 
 .trackAlbumYear,
 .trackArtist {
-	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+	font-size: 1.75rem;
 	color: #aaaaaa;
 }
 
 .trackTitle {
-	font-size: clamp(3rem, 8vw, 6rem);
+	font-size: 6rem;
 }
 
 .lyrics {
 	display: flex;
 	flex-direction: row;
-	margin: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 4rem)
-		clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 4rem);
+	margin: 1.5rem max(1.5rem, 4vw) 2rem max(1.5rem, 4vw);
 	flex-wrap: wrap;
-	row-gap: clamp(1rem, 2vw, 1.5rem);
-	column-gap: clamp(1rem, 2vw, 1.5rem);
+	row-gap: 1.5rem;
+	column-gap: 1.5rem;
 }
 
 .controls {
 	width: 100%;
-	max-width: clamp(25rem, 30vw, 30rem);
+	max-width: 25rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 7px;
 	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: clamp(1rem, 2vw, 1rem);
+	padding: 1rem;
 	height: fit-content;
 }
 
@@ -109,7 +110,7 @@
 }
 
 .chineseControls {
-	margin: clamp(1rem, 2vw, 1.5rem) 0;
+	margin: 1.5rem 0;
 }
 
 .viewModeTopLine,
@@ -119,33 +120,33 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	row-gap: clamp(0.25rem, 1vw, 0.25rem);
-	margin-bottom: clamp(0.25rem, 1vw, 0.25rem);
+	row-gap: 0.25rem;
+	margin-bottom: 0.25rem;
 	flex-wrap: wrap;
 }
 
 .viewModeHeading,
 .chineseHeading,
 .romanizationHeading {
-	font-size: clamp(1rem, 2vw, 1.25rem);
+	font-size: 1.25rem;
 }
 
 .viewModeDropdown,
 .chineseDropdown,
 .romanizationDropdown {
-	width: clamp(10rem, 20vw, 12.5rem);
-	font-size: clamp(0.875rem, 1.5vw, 1rem);
+	width: 12.5rem;
+	font-size: 1rem;
 	align-items: flex-end;
 	justify-content: flex-end;
 	outline: none;
 	border-radius: 4px;
-	padding: clamp(0.25rem, 1vw, 0.25rem);
+	padding: 0.25rem;
 	height: fit-content;
 }
 
 .viewModeSubHeading,
 .chineseSubHeading,
 .romanizationSubHeading {
-	font-size: clamp(0.875rem, 1.5vw, 1rem);
+	font-size: 1rem;
 	color: #999999;
 }

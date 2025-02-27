@@ -1,16 +1,17 @@
 .navbarList {
 	display: flex;
+	/* justify-content: space-between; */
 	align-items: center;
-	margin: 0 clamp(1rem, 5vw, 4rem);
-	height: clamp(4rem, 8vw, 6rem);
-	gap: clamp(0.5rem, 2vw, 1rem);
+	margin: 0 max(1.5rem, 4vw);
+	height: 6rem;
+	gap: 1rem;
 }
 
 .homeButton {
 	cursor: pointer;
 	color: black;
 	text-decoration: none;
-	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+	font-size: 1.75rem;
 	font-weight: bold;
 	margin-right: auto;
 }
@@ -18,8 +19,8 @@
 .searchContainer {
 	display: flex;
 	flex: 1;
-	min-width: clamp(13rem, 20vw, 15rem);
-	max-width: clamp(15rem, 30vw, 20rem);
+	min-width: 15rem;
+	max-width: 20rem;
 	justify-content: center;
 	align-items: center;
 	margin-left: auto;
@@ -31,7 +32,7 @@
 	display: flex;
 	align-items: center;
 	border-radius: 7px;
-	padding: clamp(0.25rem, 1.5vw, 0.5rem);
+	padding: 0.5rem;
 	border: 1px solid black;
 }
 
@@ -40,8 +41,8 @@
 	flex: 1;
 	border: 0;
 	outline: none;
-	padding: clamp(0.125rem, 1vw, 0.25rem);
-	font-size: clamp(0.875rem, 2vw, 1rem);
+	padding: 0.25rem;
+	font-size: 1rem;
 	color: black;
 }
 
@@ -52,8 +53,9 @@
 .searchButton {
 	border: 0;
 	border-radius: 4px;
-	width: clamp(1.25rem, 2.5vw, 1.75rem);
-	height: clamp(1.25rem, 2.5vw, 1.75rem);
+	width: 1.75rem;
+	height: 1.75rem;
 	cursor: pointer;
+	padding-top: 2px;
 	transition: background-color 0.35s ease, color 0.35s ease;
 }

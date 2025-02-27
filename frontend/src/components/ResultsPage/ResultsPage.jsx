@@ -1,10 +1,8 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ResultsItem from "./ResultsItem/ResultsItem.jsx";
-import Fuse from "fuse.js";
-import tracks from "../../data/tracks.json";
 import styles from "./ResultsPage.module.css";
 
 export default function ResultsPage() {
@@ -14,54 +12,18 @@ export default function ResultsPage() {
 	const [trackResults, setTrackResults] = useState([]);
 	const [isSearching, setIsSearching] = useState(true);
 
-	// useEffect(() => {
-	// 	setTrackResults([]);
-	// 	fetch(
-	// 		`http://localhost:8080/api/tracks/search?query=${encodeURIComponent(
-	// 			searchQuery
-	// 		)}`
-	// 	)
-	// 		.then((response) => response.json())
-	// 		.then((data) => setTrackResults(data))
-	// 		.catch((error) => console.error("Error fetching tracks:", error));
-	// 	setIsSearching(false);
-	// }, [searchQuery]);
-
-	const fuseOptions = useMemo(
-		() => ({
-			isCaseSensitive: false,
-			includeScore: true,
-			shouldSort: true,
-			includeMatches: false,
-			findAllMatches: true,
-			minMatchCharLength: 1,
-			location: 0,
-			threshold: 0.25,
-			distance: 50,
-			useExtendedSearch: true,
-			ignoreLocation: true,
-			ignoreFieldNorm: false,
-			fieldNormWeight: 1.5,
-			keys: [
-				{ name: "title", weight: 0.6 },
-				{ name: "artist", weight: 0.3 },
-				{ name: "album", weight: 0.1 },
-			],
-		}),
-		[]
-	);
-
-	const fuse = useMemo(() => {
-		return new Fuse(tracks, fuseOptions);
-	}, [fuseOptions]);
-
 	useEffect(() => {
-		document.title = `${searchQuery} - 聲(sing1)`;
 		setTrackResults([]);
-		// const fuseResults = fuse.search(searchQuery).map((track) => track.item);
-		// setTrackResults(fuseResults);
+		fetch(
+			`http://localhost:8080/api/tracks/search?query=${encodeURIComponent(
+				searchQuery
+			)}`
+		)
+			.then((response) => response.json())
+			.then((data) => setTrackResults(data))
+			.catch((error) => console.error("Error fetching tracks:", error));
 		setIsSearching(false);
-	}, [searchQuery, fuse]);
+	}, [searchQuery]);
 
 	return (
 		<div className={styles.resultsPage}>

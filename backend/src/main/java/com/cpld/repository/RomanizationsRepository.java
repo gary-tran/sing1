@@ -1,8 +1,9 @@
-package com.example.cpld.repository;
+package com.cpld.repository;
 
-import com.example.cpld.model.Romanizations;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.cpld.model.Romanizations;
 
 import java.util.UUID;
 

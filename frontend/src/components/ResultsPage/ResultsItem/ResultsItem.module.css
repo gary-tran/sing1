@@ -2,14 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-	flex: 1 1 calc(25% - clamp(1rem, 3vw, 1.5rem));
-	min-width: clamp(14rem, 30vw, 18rem);
-	max-width: clamp(26rem, 50vw, 30rem);
+	flex: 1 1 calc(25% - 1.5rem);
+	min-width: 18rem;
+	max-width: 28rem;
 	border-radius: 7px;
 	text-overflow: ellipsis;
 	background: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: clamp(0.75rem, 2vw, 1rem);
+	padding: 1rem;
 	cursor: pointer;
 }
 
@@ -30,7 +30,7 @@
 .trackInfo {
 	color: black;
 	overflow: hidden;
-	padding-top: clamp(0.25rem, 1vw, 0.5rem);
+	padding-top: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -46,14 +46,14 @@
 }
 
 .trackTitle {
-	font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-	padding-bottom: clamp(0.05rem, 0.25vw, 0.15rem);
-	line-height: clamp(1.5rem, 3vw, 2rem);
+	font-size: 1.75rem;
+	padding-bottom: 0.15rem;
+	line-height: 2rem;
 }
 
 .trackArtist,
 .trackYear {
-	font-size: clamp(1rem, 2vw, 1.25rem);
+	font-size: 1.25rem;
 	font-weight: normal;
-	line-height: clamp(1.25rem, 3vw, 1.75rem);
+	line-height: 1.75rem;
 }

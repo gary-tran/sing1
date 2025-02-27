@@ -1,4 +1,4 @@
-package com.example.cpld.model;
+package com.cpld.model;
 
 import jakarta.persistence.*;
 
@@ -45,11 +45,6 @@ public class Track {
 
     @Column(name = "search_vector", columnDefinition = "tsvector")
     private String searchVector;
-
-//    @OneToOne(mappedBy = "track", fetch = FetchType.LAZY, cascade =
-//            CascadeType.ALL)
-//    @LazyToOne( LazyToOneOption.NO_PROXY )
-//    private Lyrics lyrics;
 
     public Track() {
     }
@@ -153,14 +148,6 @@ public class Track {
     public void setSearchVector(String searchVector) {
         this.searchVector = searchVector;
     }
-
-//    public Lyrics getLyrics() {
-//        return lyrics;
-//    }
-//
-//    public void setLyrics(Lyrics lyrics) {
-//        this.lyrics = lyrics;
-//    }
 
     @Override
     public boolean equals(Object o) {

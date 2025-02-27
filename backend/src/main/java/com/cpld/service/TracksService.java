@@ -1,8 +1,9 @@
-package com.example.cpld.service;
+package com.cpld.service;
 
-import com.example.cpld.model.Track;
-import com.example.cpld.repository.TracksRepository;
 import org.springframework.stereotype.Service;
+
+import com.cpld.model.Track;
+import com.cpld.repository.TracksRepository;
 
 import java.util.List;
 
