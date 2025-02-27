@@ -1,9 +1,9 @@
-package com.cpld.repository;
+package com.sing1.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cpld.model.Lyrics;
+import com.sing1.model.Lyrics;
 
 import java.util.Optional;
 import java.util.UUID;

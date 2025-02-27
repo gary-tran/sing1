@@ -1,9 +1,10 @@
-package com.cpld.controller;
+package com.sing1.controller;
 
-import com.cpld.model.Track;
-import com.cpld.service.LyricsService;
-import com.cpld.service.TracksService;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sing1.model.Track;
+import com.sing1.service.LyricsService;
+import com.sing1.service.TracksService;
+
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 

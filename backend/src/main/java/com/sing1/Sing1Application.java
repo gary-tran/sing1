@@ -1,13 +1,13 @@
-package com.cpld;
+package com.sing1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CpldApplication {
+public class Sing1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CpldApplication.class, args);
+		SpringApplication.run(Sing1Application.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.cpld;
+package com.sing1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CpldApplicationTests {
+class Sing1ApplicationTests {
 
 	@Test
 	void contextLoads() {

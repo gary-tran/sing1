@@ -1,11 +1,11 @@
-package com.cpld.repository;
+package com.sing1.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.cpld.model.Track;
+import com.sing1.model.Track;
 
 import java.util.List;
 import java.util.Optional;

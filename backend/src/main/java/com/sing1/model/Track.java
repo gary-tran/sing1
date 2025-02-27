@@ -1,4 +1,4 @@
-package com.cpld.model;
+package com.sing1.model;
 
 import jakarta.persistence.*;
 

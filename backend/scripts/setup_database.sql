@@ -1,3 +1,6 @@
+CREATE DATABASE sing1;
+\c sing1;
+
 CREATE TABLE artists (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     spotify_id VARCHAR(255) UNIQUE NOT NULL,

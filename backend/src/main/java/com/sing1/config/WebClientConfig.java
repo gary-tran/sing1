@@ -1,4 +1,4 @@
-package com.cpld.config;
+package com.sing1.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

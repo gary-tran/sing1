@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>cpld</artifactId>
+	<artifactId>sing1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cpld</name>
+	<name>sing1</name>
 	<description>A dictionary for the pinyin lyrics of Cantonese songs.</description>
 	<url/>
 	<licenses>
