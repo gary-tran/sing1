@@ -1,4 +1,4 @@
-package com.example.cpld;
+package com.cpld;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
