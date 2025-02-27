@@ -42,19 +42,12 @@ This project is intended solely for personal use and educational purposes. It do
 
 ## 📝 Credits
 
-This project utilizes the **開放粵語字典\_(粵拼版).txt** file from [https://github.com/kfcd/yyzd](https://github.com/kfcd/yyzd).  
+This project utilizes the **開放粵語字典\_(粵拼版).txt** file from [kfcd/yyzd](<(https://github.com/kfcd/yyzd)>) and **pingyambiu** file from [kfcd/pingyam](https://github.com/kfcd/pingyam).
 © 2009 kaifangcidian.com  
-Website: [http://www.kaifangcidian.com](http://www.kaifangcidian.com)  
-This dictionary is licensed under the Creative Commons Attribution 3.0 Unported License.  
+Website: http://www.kaifangcidian.com  
+These dictionaries are licensed under the Creative Commons Attribution 3.0 Unported License.  
 For full license details, visit: [http://creativecommons.org/licenses/by/3.0/](https://creativecommons.org/licenses/by/3.0/)  
-Last updated: March 30, 2023
-
-This project utilizes the **pingyambiu** file from [https://github.com/kfcd/pingyam](https://github.com/kfcd/pingyam).  
-© 2009 kaifangcidian.com  
-Website: [http://www.kaifangcidian.com](http://www.kaifangcidian.com)  
-This dictionary is licensed under the Creative Commons Attribution 3.0 Unported License.  
-For full license details, visit: [http://creativecommons.org/licenses/by/3.0/](https://creativecommons.org/licenses/by/3.0/)  
-Last updated: Apr 28, 2024
+Last Updated: March 30, 2023 (yyzd), April 28, 2024 (pingyam)
 
 ## 👨‍💻 Author
 
