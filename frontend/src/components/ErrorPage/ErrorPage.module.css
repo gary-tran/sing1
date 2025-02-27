@@ -11,9 +11,9 @@
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	color: black;
 	margin: 0 max(1.5rem, 4vw);
 	padding: 4rem;
+	color: black;
 }
 
 .mainHeading {
@@ -29,20 +29,20 @@
 	margin: 0 auto;
 	margin-bottom: 1rem;
 	font-size: 1.75rem;
-	color: #aaaaaa;
 	font-weight: normal;
-	word-wrap: break-word;
+	color: #aaaaaa;
 	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .homeButton {
-	font-size: 1.25rem;
-	padding: 0.75rem;
-	border-radius: 7px;
-	border: 1px solid black;
 	margin: 0 auto;
-	cursor: pointer;
+	padding: 0.75rem;
+	border: 1px solid black;
+	border-radius: 7px;
 	background-color: #eeeeee;
+	font-size: 1.25rem;
+	cursor: pointer;
 }
 
 .homeButton:hover {

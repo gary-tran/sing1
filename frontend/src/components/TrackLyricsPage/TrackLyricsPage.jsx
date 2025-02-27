@@ -1,17 +1,17 @@
-import styles from "./TrackLyricsPage.module.css";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { useEffect, useState } from "react";
 import TrackLyricsDisplay from "./TrackLyricsDisplay/TrackLyricsDisplay";
+import styles from "./TrackLyricsPage.module.css";
 
 export default function TrackLyricsPage() {
 	const { spotifyId } = useParams();
 	const [trackLyrics, setTrackLyrics] = useState(null);
 	const [error, setError] = useState(null);
-	const [selectedRomSys, setSelectedRomSys] = useState("jyutping");
-	const [chineseOption, setChineseOption] = useState("traditional");
 	const [viewMode, setViewMode] = useState("split");
+	const [chineseOption, setChineseOption] = useState("traditional");
+	const [selectedRomSys, setSelectedRomSys] = useState("jyutping");
 
 	useEffect(() => {
 		const fetchLyrics = async () => {
@@ -35,8 +35,6 @@ export default function TrackLyricsPage() {
 			fetchLyrics();
 		}
 	}, [spotifyId]);
-
-	console.log(trackLyrics);
 
 	if (error) {
 		return (
@@ -96,7 +94,7 @@ export default function TrackLyricsPage() {
 					/>
 					<div className={styles.trackDetails}>
 						<p className={styles.trackAlbumYear}>
-							{trackLyrics.track.album} •{" "}
+							{trackLyrics.track.album}&nbsp;•&nbsp;
 							{trackLyrics.track.releaseDate.substring(0, 4)}
 						</p>
 						<h1 className={styles.trackTitle}>

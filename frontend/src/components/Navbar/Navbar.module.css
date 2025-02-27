@@ -1,47 +1,46 @@
 .navbarList {
 	display: flex;
-	/* justify-content: space-between; */
 	align-items: center;
-	margin: 0 max(1.5rem, 4vw);
-	height: 6rem;
 	gap: 1rem;
+	height: 6rem;
+	margin: 0 max(1.5rem, 4vw);
 }
 
 .homeButton {
+	margin-right: auto;
 	cursor: pointer;
-	color: black;
-	text-decoration: none;
 	font-size: 1.75rem;
 	font-weight: bold;
-	margin-right: auto;
+	color: black;
+	text-decoration: none;
 }
 
 .searchContainer {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex: 1;
 	min-width: 15rem;
 	max-width: 20rem;
-	justify-content: center;
-	align-items: center;
 	margin-left: auto;
 }
 
 .searchBar {
-	width: 100%;
-	background: white;
 	display: flex;
 	align-items: center;
-	border-radius: 7px;
+	width: 100%;
 	padding: 0.5rem;
 	border: 1px solid black;
+	border-radius: 7px;
+	background: white;
 }
 
 .searchText {
-	background: transparent;
 	flex: 1;
+	padding: 0.25rem;
 	border: 0;
 	outline: none;
-	padding: 0.25rem;
+	background: transparent;
 	font-size: 1rem;
 	color: black;
 }
@@ -51,11 +50,11 @@
 }
 
 .searchButton {
-	border: 0;
-	border-radius: 4px;
 	width: 1.75rem;
 	height: 1.75rem;
-	cursor: pointer;
 	padding-top: 2px;
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
 	transition: background-color 0.35s ease, color 0.35s ease;
 }

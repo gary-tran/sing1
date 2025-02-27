@@ -5,12 +5,12 @@
 	flex: 1 1 calc(25% - 1.5rem);
 	min-width: 18rem;
 	max-width: 28rem;
+	cursor: pointer;
+	padding: 1rem;
 	border-radius: 7px;
-	text-overflow: ellipsis;
 	background: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: 1rem;
-	cursor: pointer;
+	text-overflow: ellipsis;
 }
 
 .resultRow:hover {
@@ -18,36 +18,36 @@
 }
 
 .imgURL {
+	display: block;
 	width: 100%;
 	height: auto;
 	max-height: fit-content;
-	object-fit: cover;
-	display: block;
-	border-radius: 7px;
 	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 7px;
 }
 
 .trackInfo {
-	color: black;
-	overflow: hidden;
-	padding-top: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	overflow: hidden;
+	padding-top: 0.5rem;
+	color: black;
 }
 
 .trackTitle,
 .trackArtist,
 .trackYear {
-	white-space: nowrap;
 	overflow: hidden;
+	white-space: nowrap;
 	text-overflow: ellipsis;
 	margin: 0;
 }
 
 .trackTitle {
-	font-size: 1.75rem;
 	padding-bottom: 0.15rem;
+	font-size: 1.75rem;
 	line-height: 2rem;
 }
 

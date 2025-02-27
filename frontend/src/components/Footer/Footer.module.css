@@ -2,8 +2,8 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	margin: 0 max(1.5rem, 4vw);
 	height: 6rem;
+	margin: 0 max(1.5rem, 4vw);
 	list-style: none;
 }
 
@@ -14,7 +14,6 @@
 .footerLink {
 	color: black;
 	text-decoration: none;
-	/* font-weight: bold; */
 }
 
 .footerLink:hover {
@@ -23,7 +22,7 @@
 
 .footerLinks {
 	display: flex;
-	flex: row;
+	flex-direction: row;
 	margin-left: auto;
 	gap: 1.5rem;
 }

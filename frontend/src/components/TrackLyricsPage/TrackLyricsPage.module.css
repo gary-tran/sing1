@@ -1,44 +1,41 @@
 .errorSection,
 .loadingSection {
-	height: 100%;
-	/* border-radius: 7px;
-	background-color: #f0f0f0;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08); */
-	margin: 0 max(1.5rem, 4vw);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
+	margin: 0 max(1.5rem, 4vw);
 	padding: 2rem;
 }
 
 .errorMessage,
 .loadingMessage {
-	color: black;
 	font-size: 1.75rem;
+	color: black;
 }
 
 .noLyricsSection {
-	height: 100%;
-	border-radius: 7px;
-	background-color: #eeeeee;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	margin: max(1.5rem, 4vw);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
+	margin: max(1.5rem, 4vw);
 	padding: 2rem;
+	border-radius: 7px;
+	background-color: #eeeeee;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .noLyricsMessage {
-	color: black;
 	font-size: 1.5rem;
+	color: black;
 }
 
 .trackPage {
-	width: 100%;
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	height: 100vh;
 }
 
 .trackInfo {
@@ -51,24 +48,24 @@
 }
 
 .trackImage {
+	display: block;
 	width: 100%;
 	max-width: 25rem;
 	height: auto;
 	max-height: fit-content;
 	object-fit: contain;
-	display: block;
 	border-radius: 7px;
 }
 
 .trackDetails {
-	width: 100%;
-	min-width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
+	flex: 1;
+	width: 100%;
+	min-width: 50%;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	flex: 1;
 }
 
 .trackAlbumYear,
@@ -84,22 +81,22 @@
 .lyrics {
 	display: flex;
 	flex-direction: row;
-	margin: 1.5rem max(1.5rem, 4vw) 2rem max(1.5rem, 4vw);
 	flex-wrap: wrap;
+	margin: 1.5rem max(1.5rem, 4vw) 2rem max(1.5rem, 4vw);
 	row-gap: 1.5rem;
 	column-gap: 1.5rem;
 }
 
 .controls {
-	width: 100%;
-	max-width: 25rem;
 	display: flex;
 	flex-direction: column;
+	height: fit-content;
+	width: 100%;
+	max-width: 25rem;
+	padding: 1rem;
 	border-radius: 7px;
 	background-color: #eeeeee;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
-	padding: 1rem;
-	height: fit-content;
 }
 
 .viewModeControls,
@@ -118,11 +115,11 @@
 .romanizationTopLine {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	row-gap: 0.25rem;
-	margin-bottom: 0.25rem;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.25rem;
+	row-gap: 0.25rem;
 }
 
 .viewModeHeading,
@@ -134,14 +131,15 @@
 .viewModeDropdown,
 .chineseDropdown,
 .romanizationDropdown {
-	width: 12.5rem;
-	font-size: 1rem;
+	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
-	outline: none;
-	border-radius: 4px;
-	padding: 0.25rem;
+	width: 12.5rem;
 	height: fit-content;
+	padding: 0.25rem;
+	border-radius: 4px;
+	font-size: 1rem;
+	outline: none;
 }
 
 .viewModeSubHeading,

@@ -6,8 +6,8 @@ export default function Navbar() {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const [searchInput, setSearchInput] = useState("");
-	const showSearchBar = location.pathname !== "/";
 	const isInputEmpty = searchInput.trim() === "";
+	const showSearchBar = location.pathname !== "/";
 
 	const handleSearch = (e) => {
 		e.preventDefault();

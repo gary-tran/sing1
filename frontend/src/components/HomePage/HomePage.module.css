@@ -11,12 +11,12 @@
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	color: black;
-	border-radius: 7px;
-	background-color: #eeeeee;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 	margin: 0 max(1.5rem, 4vw);
 	padding: 4rem;
+	color: black;
+	background-color: #eeeeee;
+	border-radius: 7px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .mainHeading {
@@ -32,8 +32,8 @@
 	margin: 0 auto;
 	margin-bottom: 1rem;
 	font-size: 1.75rem;
-	color: #999999;
 	font-weight: normal;
+	color: #999999;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 }
@@ -46,22 +46,22 @@
 }
 
 .searchBar {
-	width: 40%;
-	min-width: 20rem;
-	background: white;
 	display: flex;
 	align-items: center;
-	border-radius: 7px;
+	width: 40%;
+	min-width: 20rem;
 	padding: 0.75rem;
+	background: white;
 	border: 1px solid black;
+	border-radius: 7px;
 }
 
 .searchText {
-	background: transparent;
 	flex: 1;
+	padding: 0 0.5rem;
 	border: 0;
 	outline: none;
-	padding: 0 0.5rem;
+	background: transparent;
 	font-size: 1.25rem;
 	color: black;
 	text-overflow: ellipsis;
@@ -72,11 +72,11 @@
 }
 
 .searchButton {
-	border: 0;
-	border-radius: 4px;
 	width: 2.5rem;
 	height: 2.5rem;
-	cursor: pointer;
 	padding-top: 2px;
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
 	transition: background-color 0.35s ease, color 0.35s ease;
 }
