@@ -42,7 +42,7 @@ This project is intended solely for personal use and educational purposes. It do
 
 ## 📝 Credits
 
-This project utilizes the **開放粵語字典\_(粵拼版).txt** file from [kfcd/yyzd](<(https://github.com/kfcd/yyzd)>) and **pingyambiu** file from [kfcd/pingyam](https://github.com/kfcd/pingyam).
+This project utilizes the **開放粵語字典\_(粵拼版).txt** file from [kfcd/yyzd](<(https://github.com/kfcd/yyzd)>) and **pingyambiu** file from [kfcd/pingyam](https://github.com/kfcd/pingyam).  
 © 2009 kaifangcidian.com  
 Website: http://www.kaifangcidian.com  
 These dictionaries are licensed under the Creative Commons Attribution 3.0 Unported License.  

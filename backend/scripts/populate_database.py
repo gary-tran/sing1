@@ -26,8 +26,6 @@ client_credentials_manager = SpotifyClientCredentials(
 )
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-print(spotify_client_secret)
-
 
 def search_artists_by_genre(genre, limit=50, offset=0):
     try:
@@ -35,7 +33,7 @@ def search_artists_by_genre(genre, limit=50, offset=0):
         results = sp.search(q=query, type='artist', limit=limit, offset=offset)
         return results['artists']['items']
     except spotipy.exceptions.SpotifyException as e:
-        print(f"❌ API Error: {e}")
+        print(f"API Error: {e}")
         time.sleep(5)
         return []
 
@@ -50,7 +48,7 @@ def get_all_artists_by_genre(genre, limit=50):
         if not results_batch:
             break
         artists.extend(results_batch)
-        print(f"✅ Found batch of {len(results_batch)} (Total: {
+        print(f"Found batch of {len(results_batch)} (Total: {
               len(artists)}) artists for genre: {genre}")
         offset += limit
         time.sleep(1)
@@ -87,7 +85,7 @@ def get_all_album_ids_by_artist(artist_id, limit=50, offset=0):
             artist_id=artist_id, include_groups=include_groups, limit=limit, offset=offset)
         return results['items']
     except spotipy.exceptions.SpotifyException as e:
-        print(f"❌ API Error: {e}")
+        print(f"API Error: {e}")
         time.sleep(5)
         return []
 
@@ -102,7 +100,7 @@ def get_all_albums_tracks_by_artist(artist_id, limit=50):
         if not results_batch:
             break
         albums.extend(results_batch)
-        print(f"✅ Found batch of {len(results_batch)} (Total: {
+        print(f"Found batch of {len(results_batch)} (Total: {
               len(albums)}) albums for artist {artist_id}")
         offset += limit
         time.sleep(1)
@@ -123,7 +121,7 @@ def get_all_albums_tracks_by_artist(artist_id, limit=50):
             album_tracks.extend(results_batch['albums'])
             time.sleep(1)
         except spotipy.exceptions.SpotifyException as e:
-            print(f"❌ API Error: {e}")
+            print(f"API Error: {e}")
             time.sleep(5)
 
         album_id_offset += album_id_limit
@@ -186,7 +184,7 @@ if __name__ == "__main__":
     # get_all_artists_by_genre(genre)
 
     # NOTE: Add songs by artist by changing 'artist_spotify_id'
-    # artist_spotify_id = "00SyEN54VSQ2GIYd7OZP8I"
+    # artist_spotify_id = ""
     # save_artists([sp.artist(artist_id=artist_spotify_id)])
 
     # NOTE: Update tracks list from all artists in the database

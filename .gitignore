@@ -17,3 +17,6 @@ myenv/
 
 # Ignore Visual Studio Code files
 .vscode/
+
+# Ignore cache files
+.cache

@@ -6,6 +6,7 @@ target/
 .DS_Store
 scripts/.cache
 .env
+.cache
 
 ### STS ###
 .apt_generated

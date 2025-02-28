@@ -41,7 +41,6 @@ class Converter:
                     syllable = w[method]
                     if method == 0:
                         syllable = self.normalize_yale(syllable)
-                    # syllable = '0' + syllable
                     converted_word_list.append(syllable)
             return '0' + '/'.join(converted_word_list)
 

@@ -42,7 +42,7 @@
 }
 
 .searchQuery {
-	font-size: 6rem;
+	font-size: clamp(4rem, 8vw, 6rem);
 	color: black;
 }
 

@@ -75,7 +75,7 @@
 }
 
 .trackTitle {
-	font-size: 6rem;
+	font-size: clamp(4rem, 5vw, 6rem);
 }
 
 .lyrics {
