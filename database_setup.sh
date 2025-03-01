@@ -13,8 +13,7 @@ then
 fi
 
 echo "Setting up the database..."
-# Replace your_username with your PostgreSQL username
-psql -U your_username -d postgres -f backend/scripts/setup_database.sql
+psql -U your_postgresql_username -d postgres -f backend/scripts/setup_database.sql
 
 echo "Populating the database..."
 myenv/bin/python3 backend/scripts/populate_database.py

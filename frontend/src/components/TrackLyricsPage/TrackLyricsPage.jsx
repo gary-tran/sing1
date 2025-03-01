@@ -26,6 +26,7 @@ export default function TrackLyricsPage() {
 				}
 
 				const data = await response.json();
+				document.title = `${data.track.title} by ${data.track.artist} - 聲(sing1)`;
 				setTrackLyrics(data);
 			} catch (error) {
 				setError(error);
@@ -205,9 +206,6 @@ export default function TrackLyricsPage() {
 										<option value="penkyamp_tone_diacritics">
 											Penkyamp (Diacritics)
 										</option>
-										{/* <option value="english_translation">
-											English Translation
-										</option> */}
 									</select>
 								</div>
 								<p className={styles.romanizationSubHeading}>

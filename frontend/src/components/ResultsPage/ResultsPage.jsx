@@ -13,6 +13,7 @@ export default function ResultsPage() {
 	const [isSearching, setIsSearching] = useState(true);
 
 	useEffect(() => {
+		document.title = `${searchQuery} - 聲(sing1)`;
 		setTrackResults([]);
 		fetch(
 			`http://localhost:8080/api/tracks/search?query=${encodeURIComponent(
