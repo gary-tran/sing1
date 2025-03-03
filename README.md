@@ -27,6 +27,8 @@ A live demo is available for users to explore the app's functionality at sing1.v
 
 5. Navigate the app using the home button in the navbar or perform another search to explore additional features.
 
+The sample result on this site includes original lyrics written by me, Gary Tran. These lyrics are provided for demonstration purposes only and cannot be used or reproduced without permission.
+
 ## 🔧 Tech Stack
 
 **Front-end:** React, CSS
