@@ -17,7 +17,7 @@ A live demo is available for users to explore the app's functionality at sing1.v
 
 **How to Explore the Demo:**
 
-1. Visit sing1.vercel.app.
+1. Visit [sing1.vercel.app](sing1.vercel.app).
 
 2. Search for "**菠蘿之家**" or "**gary**" in the search bar to trigger a sample result.
 
