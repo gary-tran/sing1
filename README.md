@@ -19,7 +19,7 @@ A live demo is available for users to explore the app's functionality at sing1.v
 
 1. Visit sing1.vercel.app.
 
-2. Search for "菠蘿之家" or "gary" in the search bar to trigger a sample result.
+2. Search for "**菠蘿之家**" or "**gary**" in the search bar to trigger a sample result.
 
 3. Click on the result to view the lyrics along with their romanizations.
 
@@ -45,7 +45,15 @@ A live demo is available for users to explore the app's functionality at sing1.v
 -   Python3
 -   Spotify Developer Account
 
-You will need a Spotify Developer account to obtain the necessary Client ID and Client Secret for accessing the Spotify Web API. Follow these instructions to set up your app and get the credentials: [Spotify Developer Apps Guide](https://developer.spotify.com/documentation/web-api/concepts/apps).
+To access the Spotify Web API, you'll need a Spotify Developer account to obtain the required Client ID and Client Secret.
+
+1. Log in to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) using your existing Spotify account.
+
+-   If you don’t already have a Spotify account, you can create one at [Spotify's sign up page](https://www.spotify.com/us/signup).
+
+2. Follow these instructions to set up your app and get the credentials: [Spotify Developer Apps Guide](https://developer.spotify.com/documentation/web-api/concepts/apps).
+
+These credentials are necessary for authenticating your app and interacting with the Spotify Web API.
 
 ## 🚀 Project Setup
 
