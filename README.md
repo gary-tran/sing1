@@ -23,7 +23,7 @@ A live demo is available for users to explore the app's functionality at sing1.v
 
 3. Click on the result to view the lyrics along with their romanizations.
 
-4. Use the dropdown menus to switch between viewing modes, toggle simplified or traditional Chinese lyrics, and select different Cantonese romanization systems.
+4. Use the dropdown menus to switch between viewing modes, toggle simplified or traditional Chinese lyrics, select different Cantonese romanization systems, and choose the appropriate context-based romanizations for certain characters.
 
 5. Navigate the app using the home button in the navbar or perform another search to explore additional features.
 
@@ -49,7 +49,7 @@ To access the Spotify Web API, you'll need a Spotify Developer account to obtain
 
 1. Log in to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) using your existing Spotify account.
 
--   If you don’t already have a Spotify account, you can create one at [Spotify's sign up page](https://www.spotify.com/us/signup).
+    - If you don’t already have a Spotify account, you can create one at [Spotify's sign up page](https://www.spotify.com/us/signup).
 
 2. Follow these instructions to set up your app and get the credentials: [Spotify Developer Apps Guide](https://developer.spotify.com/documentation/web-api/concepts/apps).
 
