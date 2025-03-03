@@ -1,6 +1,6 @@
 # 聲(sing1)
 
-A web application that offers Cantonese song lyrics with 11 different romanization systems, helping users accurately sound out each word, understand pronunciation, and sing along with confidence. This tool makes it easy to explore lyrics in both Simplified and Traditional Chinese while seamlessly switching between romanization styles.
+A web application that offers Cantonese song lyrics with 11 different romanization systems, helping users accurately sound out each character, understand pronunciation, and sing along with confidence. This tool makes it easy to explore lyrics in both Simplified and Traditional Chinese while seamlessly switching between romanization styles.
 
 ## 📌 Features
 
@@ -9,7 +9,7 @@ A web application that offers Cantonese song lyrics with 11 different romanizati
 -   Supports 11 different Cantonese romanization systems for pronunciation assistance.
 -   Toggle between Simplified and Traditional Chinese lyrics.
 -   Choose between side-by-side translations or inline romanizations below each character of the lyrics.
--   Select the accurate pronunciation for Cantonese words that have different pronunciations depending on the context.
+-   Select the accurate pronunciation for Cantonese characters that have different pronunciations depending on the context.
 
 ## 🔗 Demo
 
