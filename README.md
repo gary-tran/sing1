@@ -9,7 +9,7 @@ A web application that offers Cantonese song lyrics with 11 different romanizati
 -   Supports 11 different Cantonese romanization systems for pronunciation assistance.
 -   Toggle between Simplified and Traditional Chinese lyrics.
 -   Choose between side-by-side translations or inline romanizations below each character of the lyrics.
--   Select the correct pronunciation for Cantonese words that have different pronunciations depending on the context.
+-   Select the accurate pronunciation for Cantonese words that have different pronunciations depending on the context.
 
 ## 🔗 Demo
 
