@@ -37,7 +37,7 @@ The sample result on this site includes original lyrics written by me, Gary Tran
 
 **Database:** PostgreSQL
 
-**Scripting:** Shell, SQL, Python
+**Scripting:** Bash, SQL, Python
 
 ## ⚙️ Prerequisites
 
